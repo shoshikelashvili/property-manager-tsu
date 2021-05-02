@@ -11,28 +11,14 @@
  * @package    Property_Manager
  * @subpackage Property_Manager/admin/partials
  */
+//Enqueue CSS for the page
+wp_enqueue_style( 'main-dashboard', plugin_dir_url( __FILE__ ) . '../css/main-dashboard.css', array(), $this->version, 'all' );
+wp_enqueue_script( 'main-dashboard-js', plugin_dir_url( __FILE__ ) . '../js/main-dashboard.js', array( 'jquery' ), $this->version, false );
 ?>
 
-<!-- This file should primarily consist of HTML with a little bit of PHP. -->
-<!-- Commented out the initial HTML -->
-<!-- <div class="middle">
-    <label>
-        <input type="radio" name="radio" checked/>
-        <div class="front-end box">
-            <span>Front-end</span>
-        </div>
-    </label>
-
-    <label>
-        <input type="radio" name="radio"/>
-        <div class="back-end box">
-            <span>Back-end</span>
-        </div>
-    </label>
-</div> -->
-
 <div class="main-dashboard">
-    <button type="button" class="btn btn-secondary btn-lg">Settings</button>
-    <button type="button" class="btn btn-secondary btn-lg">Edit Property</button>
-    <button type="button" class="btn btn-secondary btn-lg">Add Property</button>
+    <button id="settings" type="button" class="btn btn-secondary btn-lg" onclick="redirect(this.id)">Settings</button>
+    <button id="add_properties" type="button" class="btn btn-secondary btn-lg" onclick="redirect(this.id)">Add Property</button>
+    <button id="edit_properties" type="button" class="btn btn-secondary btn-lg" onclick="redirect(this.id)">Edit Property</button>
+    <button id="delete_properties" type="button" class="btn btn-secondary btn-lg" onclick="redirect(this.id)">Delete Property</button>
 </div> 

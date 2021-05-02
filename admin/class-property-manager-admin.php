@@ -75,7 +75,7 @@ class Property_Manager_Admin {
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/property-manager-admin.css', array(), $this->version, 'all' );
 		wp_enqueue_style( 'bootstrap-css', plugin_dir_url( __FILE__ ) . 'css/bootstrap.min.css', array(), $this->version, 'all' );
-		wp_enqueue_style( 'main-dashboard', plugin_dir_url( __FILE__ ) . 'css/main-dashboard.css', array(), $this->version, 'all' );
+		
 		
 	}
 
@@ -103,6 +103,13 @@ class Property_Manager_Admin {
 
 	}
 
+	private $submenu_array = array(
+		['Name' => 'Settings', 'Slug' => 'settings', 'callback' => 'settings_display'],
+		['Name' => 'Add Properties', 'Slug' => 'add_properties', 'callback' => 'add_properties_display'],
+		['Name' => 'Edit Properties', 'Slug' => 'edit_properties', 'callback' => 'edit_properties_display'],
+		['Name' => 'Delete Properties', 'Slug' => 'delete_properties', 'callback' => 'delete_properties_display'],
+	);
+
 	/**
 	 * Adds custom settings menu
 	 *
@@ -119,6 +126,18 @@ class Property_Manager_Admin {
             'dashicons-admin-home',
             9
         );
+
+		foreach($this->submenu_array as $submenu)
+		{
+			add_submenu_page( 
+				'property_management', 
+				$submenu['Name'],
+				$submenu['Name'], 
+				'manage_options', 
+				$submenu['Slug'],
+				array( $this , $submenu['callback'] )
+			);
+		}
 	}
 
 	/**
@@ -129,4 +148,41 @@ class Property_Manager_Admin {
 	public function main_dashboard_display(){
 		require_once 'partials/main-dashboard.php';
 	}
+
+	/**
+	 * Returning the settings view
+	 *
+	 * @since    1.0.0
+	 */
+	public function settings_display(){
+		require_once 'partials/settings.php';
+	}
+
+	/**
+	 * Returning the add properties view
+	 *
+	 * @since    1.0.0
+	 */
+	public function add_properties_display(){
+		require_once 'partials/add-properties.php';
+	}
+
+	/**
+	 * Returning the edit properties view
+	 *
+	 * @since    1.0.0
+	 */
+	public function edit_properties_display(){
+		require_once 'partials/edit-properties.php';
+	}
+
+	/**
+	 * Returning the delete properties view
+	 *
+	 * @since    1.0.0
+	 */
+	public function delete_properties_display(){
+		require_once 'partials/delete-properties.php';
+	}
+
 }
