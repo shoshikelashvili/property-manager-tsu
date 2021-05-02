@@ -8,7 +8,6 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              Rati Shoshikelashvili, Irakli Kapanadze, Luka Metreveli
  * @since             1.0.0
  * @package           Property_Manager
  *
@@ -17,7 +16,6 @@
  * Description:       This is a plugin for managing, adding and editing properties, it is made as a university project
  * Version:           1.0.0
  * Author:            Rati Shoshikelashvili, Irakli Kapanadze, Luka Metreveli
- * Author URI:        Rati Shoshikelashvili, Irakli Kapanadze, Luka Metreveli
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       property-manager

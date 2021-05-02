@@ -100,4 +100,30 @@ class Property_Manager_Admin {
 
 	}
 
+	/**
+	 * Adds custom settings menu
+	 *
+	 * @since    1.0.0
+	 */
+	public function add_manager_menu() {
+
+		add_menu_page(
+            'Property Management',
+            'Property Management',
+            'manage_options',
+            'property_management',
+            array($this, 'main_dashboard_display'),
+            'dashicons-admin-home',
+            9
+        );
+	}
+
+	/**
+	 * Returning the main dashboard view
+	 *
+	 * @since    1.0.0
+	 */
+	public function main_dashboard_display(){
+		require_once 'partials/main-dashboard.php';
+	}
 }
