@@ -156,8 +156,15 @@ class Property_Manager {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+
+		//Add admin menu
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_manager_menu');
 
+		//Add custom post type
+		$this->loader->add_action('init', $plugin_admin, 'custom_property_type');
+
+		//Disable gutenberg editor for properties
+		$this->loader->add_filter('use_block_editor_for_post_type',$plugin_admin,'disable_gutenberg',10,2);
 	}
 
 	/**

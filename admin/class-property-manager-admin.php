@@ -185,4 +185,109 @@ class Property_Manager_Admin {
 		require_once 'partials/delete-properties.php';
 	}
 
+	//Functino for registering custom post type for peoprerties
+	public function custom_property_type(){
+		/*
+		* Creating a function to create our CPT
+		*/
+		$labels = array(
+			'name'                => _x( 'Properies', 'Post Type General Name'),
+			'singular_name'       => _x( 'Property', 'Post Type Singular Name'),
+			'menu_name'           => __( 'Properties'),
+			'all_items'           => __( 'All Properties'),
+			'view_item'           => __( 'View Property'),
+			'add_new_item'        => __( 'Add New Property'),
+			'add_new'             => __( 'Add New Property'),
+			'edit_item'           => __( 'Edit Property'),
+			'update_item'         => __( 'Update Property'),
+			'search_items'        => __( 'Search Property'),
+			'not_found'           => __( 'Property Not Found'),
+			'parent_item_colon'  => '',
+			'not_found_in_trash'  => __( 'Property Not found in Trash'),
+		);
+		
+		// Set other options for Custom Post Type
+		
+		$args = array(
+			'label'               => __( 'properties'),
+			'description'         => __( 'Holds properties and data about them'),
+			'labels'              => $labels,
+			// Features this CPT supports in Post Editor
+			'supports'            => array( 'title', 'editor', 'thumbnail', 'custom-fields', ),
+			// You can associate this CPT with a taxonomy or custom taxonomy. 
+			// 'taxonomies'          => array( 'genres' ),
+			/* A hierarchical CPT is like Pages and can have
+			* Parent and child items. A non-hierarchical CPT
+			* is like Posts.
+			*/ 
+			'public' => false,  // it's not public, it shouldn't have it's own permalink, and so on
+			'publicly_queryable' => true,  // you should be able to query it
+			'show_ui' => true,  // you should be able to edit it in wp-admin
+			'exclude_from_search' => true,  // you should exclude it from search results
+			'show_in_nav_menus' => false,  // you shouldn't be able to add it to menus
+			'has_archive' => false,  // it shouldn't have archive page
+			'rewrite' => false,  // it shouldn't have rewrite rules
+			'menu_position'       => 5,
+			'has_archive'         => true,
+			'show_in_rest' => true
+			// 'capability_type'     => 'post',
+			// 'show_in_rest' => true,
+	
+		);
+		
+		// Registering your Custom Post Type
+		register_post_type( 'property', $args );
+
+		//  Register taxonomies for it
+		$this->register_custom_taxonomies();
+		
+	}
+
+	public function register_custom_taxonomies(){
+		$labels = array(
+			'name'                       => _x( 'Property Types', 'taxonomy general name'),
+			'singular_name'              => _x( 'Property Type', 'Taxonomy Singular Name'),
+			'all_items'                  => __( 'All Property Types', 'text_domain' ),
+			'new_item_name'              => __( 'New Property Type', 'text_domain' ),
+			'add_new_item'               => __( 'Add Property Type', 'text_domain' ),
+			'edit_item'                  => __( 'Edit Property Type', 'text_domain' ),
+			'update_item'                => __( 'Update Property Type', 'text_domain' ),
+			'view_item'                  => __( 'View Property Type', 'text_domain' )
+		);
+		$args = array(
+			'labels'                     => $labels,
+			'public'                     => true,
+			'show_ui'                    => true,
+			'show_admin_column'          => true,
+			'show_in_nav_menus'          => true,
+			'show_in_rest' => true,
+			'show_tagcloud'              => true,
+			'rewrite' => array( 'slug' => 'property_types' )
+		);
+		register_taxonomy( 'property_types', array( 'property' ), $args );
+
+		wp_insert_term(
+			'Residential',   // the term 
+			'property_types', // the taxonomy
+			array(
+				'description' => 'Residential Property',
+				'slug'        => 'residential'
+			)
+		);
+
+		wp_insert_term(
+			'Condominium',   // the term 
+			'property_types', // the taxonomy
+			array(
+				'description' => 'Condo Property',
+				'slug'        => 'condo'
+			)
+		);
+	}
+
+	public function disable_gutenberg($current_status, $post_type)
+	{
+		if ($post_type === 'property') return false;
+    	return $current_status;
+	}
 }
