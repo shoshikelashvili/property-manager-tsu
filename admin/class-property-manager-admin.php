@@ -123,7 +123,7 @@ class Property_Manager_Admin {
             'manage_options',
             'property_management',
             array($this, 'main_dashboard_display'),
-            'dashicons-admin-home',
+            'dashicons-admin-multisite',
             9
         );
 
@@ -212,6 +212,7 @@ class Property_Manager_Admin {
 			'label'               => __( 'properties'),
 			'description'         => __( 'Holds properties and data about them'),
 			'labels'              => $labels,
+			'menu_icon' => 'dashicons-admin-home',
 			// Features this CPT supports in Post Editor
 			'supports'            => array( 'title', 'editor', 'thumbnail', 'custom-fields', ),
 			// You can associate this CPT with a taxonomy or custom taxonomy. 
@@ -240,7 +241,6 @@ class Property_Manager_Admin {
 
 		//  Register taxonomies for it
 		$this->register_custom_taxonomies();
-		
 	}
 
 	public function register_custom_taxonomies(){
@@ -265,29 +265,29 @@ class Property_Manager_Admin {
 			'rewrite' => array( 'slug' => 'property_types' )
 		);
 		register_taxonomy( 'property_types', array( 'property' ), $args );
-
-		wp_insert_term(
-			'Residential',   // the term 
-			'property_types', // the taxonomy
-			array(
-				'description' => 'Residential Property',
-				'slug'        => 'residential'
-			)
-		);
-
-		wp_insert_term(
-			'Condominium',   // the term 
-			'property_types', // the taxonomy
-			array(
-				'description' => 'Condo Property',
-				'slug'        => 'condo'
-			)
-		);
 	}
 
 	public function disable_gutenberg($current_status, $post_type)
 	{
 		if ($post_type === 'property') return false;
     	return $current_status;
+	}
+
+
+	public function register_custom_metabox()
+	{
+		add_meta_box( 
+			'property_details',
+			__( 'Property Details'),
+			array($this,'property_details_content'),
+			'property',
+			'normal',
+			'high'
+		);
+	}
+
+	public function property_details_content()
+	{
+		require_once 'partials/add-properties.php';
 	}
 }

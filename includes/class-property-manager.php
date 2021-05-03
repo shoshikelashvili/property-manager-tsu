@@ -163,8 +163,13 @@ class Property_Manager {
 		//Add custom post type
 		$this->loader->add_action('init', $plugin_admin, 'custom_property_type');
 
+		//Add custom meta box
+		$this->loader->add_action('add_meta_boxes', $plugin_admin, 'register_custom_metabox');
+
 		//Disable gutenberg editor for properties
 		$this->loader->add_filter('use_block_editor_for_post_type',$plugin_admin,'disable_gutenberg',10,2);
+
+
 	}
 
 	/**
