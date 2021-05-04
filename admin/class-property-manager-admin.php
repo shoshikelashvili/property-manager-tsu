@@ -307,41 +307,48 @@ class Property_Manager_Admin {
 
 	public function save_custom_meta_box_data($post_id, $post)
 	{
-		error_log('POST Data');
-		error_log(print_r($_POST,true));
+		// error_log('POST Data');
+		// error_log(print_r($_POST,true));
 
 		$postId = $post_id;
 		$images_JSON = stripslashes($_POST['custom_image_data']);
 		$images_decoded = json_decode($images_JSON,true);
-		error_log('DECODED IMAGES');
-		error_log(print_r($images_decoded,true));
-		// $directory = "/".date('Y')."/".date('m')."/";
-		// $wp_upload_dir = wp_upload_dir();
-		// $data = base64_decode($image);
-		// $filename = "IMG_".time().".png";
-		// //$fileurl = $wp_upload_dir['url'] . '/' . basename( $filename );
-		// $fileurl = "../wp-content/uploads".$directory.$filename;
+		// error_log('DECODED IMAGES');
+		// error_log(print_r($images_decoded,true));
+		$directory = "/".date('Y')."/".date('m')."/";
+		$wp_upload_dir = wp_upload_dir();
 
-		// $filetype = wp_check_filetype( basename( $fileurl), null );
+		$i = 0;
+		foreach($images_decoded as $image)
+		{
+			error_log('printing loop image');
+			error_log(print_r($image,true));
+			$base64 = $image['base64'];
+			$data = base64_decode($base64);
+			$filename = "IMG_".time().$i.".png";
+			$i++;
+			$fileurl = $wp_upload_dir['url'] . '/' . basename( $filename );
+			$fileurl = "../wp-content/uploads".$directory.$filename;
 
-		// file_put_contents($fileurl, $data);
+			$filetype = wp_check_filetype( basename( $fileurl), null );
 
-		// 	$attachment = array(
-		// 		'guid' => $wp_upload_dir['url'] . '/' . basename( $fileurl ),
-		// 		'post_mime_type' => $filetype['type'],
-		// 		'post_title' => preg_replace('/\.[^.]+$/', '', basename($fileurl)),
-		// 		'post_content' => '',
-		// 		'post_status' => 'inherit'
-		// 	);
-		// //  print_r($attachment);
-		// //echo "<br>file name :  $fileurl";
-		// 	$attach_id = wp_insert_attachment( $attachment, $fileurl ,$postId);
-		// require_once('../wp-admin/includes/image.php' );
+			file_put_contents($fileurl, $data);
 
-		// // Generate the metadata for the attachment, and update the database record.
-		// $attach_data = wp_generate_attachment_metadata( $attach_id, $fileurl );
-		// wp_update_attachment_metadata( $attach_id, $attach_data );
-		// $product_price = $_POST['product_price'];
-		// error_log('Logging POST DATA');
+			$attachment = array(
+				'guid' => $wp_upload_dir['url'] . '/' . basename( $fileurl ),
+				'post_mime_type' => $filetype['type'],
+				'post_title' => preg_replace('/\.[^.]+$/', '', basename($fileurl)),
+				'post_content' => '',
+				'post_status' => 'inherit'
+			);
+			//  print_r($attachment);
+			//echo "<br>file name :  $fileurl";
+			$attach_id = wp_insert_attachment( $attachment, $fileurl ,$postId);
+			require_once('../wp-admin/includes/image.php' );
+
+			// Generate the metadata for the attachment, and update the database record.
+			$attach_data = wp_generate_attachment_metadata( $attach_id, $fileurl );
+			wp_update_attachment_metadata( $attach_id, $attach_data );
+		}
 	}
 }
