@@ -117,6 +117,11 @@ class Property_Manager {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-property-manager-admin.php';
 
 		/**
+		 * The class responsible for defining all ajax for admin panel
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-property-manager-ajax.php';
+
+		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
@@ -153,6 +158,7 @@ class Property_Manager {
 	private function define_admin_hooks() {
 
 		$plugin_admin = new Property_Manager_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_ajax = new Property_Manager_Ajax();
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -169,6 +175,7 @@ class Property_Manager {
 		//Save custom meta box data
 		$this->loader->add_action( 'save_post', $plugin_admin, 'save_custom_meta_box_data', 10, 2 );
 
+		$this->loader->add_action( 'wp_ajax_example_ajax_request', $plugin_ajax, 'example_ajax_request' ); 
 		//Disable gutenberg editor for properties
 		$this->loader->add_filter('use_block_editor_for_post_type',$plugin_admin,'disable_gutenberg',10,2);
 
