@@ -284,10 +284,23 @@ class Property_Manager_Admin {
 			'normal',
 			'high'
 		);
+		add_meta_box( 
+			'property_gallery',
+			__( 'Property Gallery'),
+			array($this,'property_gallery_content'),
+			'property',
+			'normal',
+			'high'
+		);
 	}
 
 	public function property_details_content()
 	{
 		require_once 'partials/add-properties.php';
+	}
+
+	public function property_gallery_content()
+	{
+		require_once 'partials/property-gallery.php';
 	}
 }
