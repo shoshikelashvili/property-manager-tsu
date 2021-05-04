@@ -307,8 +307,23 @@ class Property_Manager_Admin {
 
 	public function save_custom_meta_box_data($post_id, $post)
 	{
-		// error_log('POST Data');
-		// error_log(print_r($_POST,true));
+		//Delete original photos, before adding the current/new data
+        $args = array(
+            'post_parent' => $post_id,
+            'post_type' => 'attachment'
+        );
+        
+        $posts_array = get_posts($args);
+		error_log('logging posts arraay');
+		error_log(print_r($posts_array,true));
+		foreach($posts_array as $post)
+		{
+			$path_to_file = get_attached_file($post->ID);
+			error_log('deletion path is');
+			error_log(print_r($path_to_file,true));
+			wp_delete_file($path_to_file);
+			wp_delete_attachment($post->ID,true);
+		}
 
 		$postId = $post_id;
 		$images_JSON = stripslashes($_POST['custom_image_data']);
@@ -328,8 +343,11 @@ class Property_Manager_Admin {
 			$filename = "IMG_".time().$i.".png";
 			$i++;
 			$fileurl = $wp_upload_dir['url'] . '/' . basename( $filename );
+			error_log('first fileurl is');
+			error_log($fileurl);
 			$fileurl = "../wp-content/uploads".$directory.$filename;
-
+			error_log('second fileurl is');
+			error_log($fileurl);
 			$filetype = wp_check_filetype( basename( $fileurl), null );
 
 			file_put_contents($fileurl, $data);

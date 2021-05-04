@@ -1,4 +1,5 @@
 jQuery(document).ready(function() {
+
     document.getElementById('pro-image').addEventListener('change', readImage, false);
     
     jQuery( ".preview-images-zone" ).sortable();
@@ -12,8 +13,10 @@ jQuery(document).ready(function() {
         //Remove values from input when images get deleted
         var hidden = document.getElementById('image-hidden-field');
         var currentObj = JSON.parse(hidden.getAttribute('value'));
+
+        console.log('current object before removal', currentObj);
         currentObj = currentObj.filter(function( obj ) {
-            return obj.num !== no;
+            return parseInt(obj.num) !== parseInt(no);
         })
         hidden.setAttribute('value', JSON.stringify(currentObj))
         var testObj = JSON.parse(hidden.getAttribute('value'));
@@ -21,6 +24,41 @@ jQuery(document).ready(function() {
     });
 });
 
+function toDataUrl(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+        var reader = new FileReader();
+        reader.onloadend = function() {
+            callback(reader.result);
+        }
+        reader.readAsDataURL(xhr.response);
+    };
+    xhr.open('GET', url);
+    xhr.responseType = 'blob';
+    xhr.send();
+}
+
+jQuery(window).ready(function() {
+    console.log('window ready');
+    var hidden = document.getElementById('image-hidden-field');
+    
+    jQuery( ".existing-image" ).each(function( index, element ) {
+        toDataUrl(element.getAttribute('src'), function(myBase64) {
+            var currentObj = JSON.parse(hidden.getAttribute('value'));
+            // console.log(myBase64.split(',')[1]); // myBase64 is the base64 string
+            myBase64 = myBase64.split(',')[1];
+            if(currentObj == null)
+            {
+                hidden.setAttribute('value', JSON.stringify([{base64: myBase64, title: 'title', num: element.getAttribute('data-unique')}]))
+            }
+            else{
+                var obj = {base64: myBase64, title:'title', num: element.getAttribute('data-unique')};
+                currentObj.push(obj);
+                hidden.setAttribute('value', JSON.stringify(currentObj))
+            }
+        });
+        });
+});
 
 
 var num = 4;

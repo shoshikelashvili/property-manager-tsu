@@ -23,11 +23,33 @@ wp_enqueue_script( 'property-gallery-js', plugin_dir_url( __FILE__ ) . '../js/pr
         <input type="file" id="pro-image" name="pro-image" style="display: none;" class="form-control" multiple>
     </fieldset>
     <div class="preview-images-zone">
-        <div class="preview-image preview-show-1 placeholder">
-            <div class="image-cancel" data-no="1">x</div>
-            <div class="image-zone"><img id="pro-img-1" src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=6&m=922962354&s=612x612&w=0&h=_KKNzEwxMkutv-DtQ4f54yA5nc39Ojb_KPvoV__aHyU="></div>
-            <!-- <div class="tools-edit-image"><a href="javascript:void(0)" data-no="1" class="btn btn-light btn-edit-image">edit</a></div> -->
-        </div>
+        <?php 
+        global $post; 
+        $args = array(
+            'post_parent' => $post->ID,
+            'post_type' => 'attachment'
+        );
+        
+        $posts_array = get_posts($args);
+        // print_r($posts_array);
+        if(!empty($posts_array))
+        {
+            foreach($posts_array as $post)
+            {
+                echo '<div class="preview-image preview-show-'.$post->ID.'">';
+                echo '<div class="image-cancel" data-existing="1" data-no="'.$post->ID.'">x</div>';
+                echo '<div class="image-zone"><img class="existing-image" data-unique="'.$post->ID.'" id="pro-img-'.$post->ID.'" src="'.$post->guid.'"></div>';
+                echo '</div>';
+            }
+        }
+        else
+        {
+            echo '<div class="preview-image preview-show-1 placeholder">';
+            echo '<div class="image-cancel" data-no="1">x</div>';
+            echo '<div class="image-zone"><img id="pro-img-1" src="https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=6&m=922962354&s=612x612&w=0&h=_KKNzEwxMkutv-DtQ4f54yA5nc39Ojb_KPvoV__aHyU="></div>';
+            echo '</div>';
+        }
+        ?>
     </div>
 </div>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
