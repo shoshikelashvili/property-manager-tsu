@@ -18,32 +18,32 @@ wp_enqueue_style( 'add-properties', plugin_dir_url( __FILE__ ) . '../css/add-pro
 <div class="jumbotron">
     <form>
     <div class="form-group">
-        <label for="exampleFormControlInput1">Price</label>
-        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="0">
+        <label for="property_price">Price</label>
+        <input type="number" class="form-control" id="property_price" name="property_price" placeholder="0">
     </div>
     <div class="form-group">
-        <label for="exampleFormControlInput2">Bedrooms</label>
-        <input type="number" class="form-control" id="exampleFormControlInput2" placeholder="0">
+        <label for="property_bedrooms">Bedrooms</label>
+        <input type="number" class="form-control" id="property_bedrooms" name="property_bedrooms" placeholder="0">
     </div>
     <div class="form-group">
-        <label for="exampleFormControlInput3">Bathrooms</label>
-        <input type="number" class="form-control" id="exampleFormControlInput3" placeholder="0">
+        <label for="property_bathrooms">Bathrooms</label>
+        <input type="number" class="form-control" id="property_bathrooms" name="property_bathrooms" placeholder="0">
     </div>
     <div class="form-group">
-        <label for="exampleFormControlInput4">Area</label>
-        <input type="number" class="form-control" id="exampleFormControlInput4" placeholder="0">
+        <label for="property_area">Area</label>
+        <input type="number" class="form-control" id="property_area" name="property_area" placeholder="0">
     </div>
     <div class="form-group">
-        <label for="exampleFormControlInput6">Year Built</label>
-        <input type="number" class="form-control" id="exampleFormControlInput6" placeholder="0">
+        <label for="property_year">Year Built</label>
+        <input type="number" class="form-control" id="property_year" name="property_year" placeholder="0">
     </div>
     <div class="form-group">
-        <label for="exampleFormControlInput5">Location</label>
-        <input type="email" class="form-control" id="exampleFormControlInput5" placeholder="Tbilisi">
+        <label for="property_location">Location</label>
+        <input type="text" class="form-control" id="property_location" name="property_location" placeholder="Tbilisi">
     </div>
     <div class="form-group">
-        <label for="exampleFormControlSelect1">Status</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <label for="property_status">Status</label>
+        <select class="form-control" id="property_status" name="property_status">
         <option>Active</option>
         <option>Sold</option>
         <option>Closed</option>
@@ -53,17 +53,17 @@ wp_enqueue_style( 'add-properties', plugin_dir_url( __FILE__ ) . '../css/add-pro
     <div class="form-group">
         <label>Pets Allowed?</label>
         <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-            <label class="custom-control-label" for="customRadioInline1">Yes</label>
+            <input type="radio" id="property_pets_yes" name="property_pets_yes" class="custom-control-input">
+            <label class="custom-control-label" for="property_pets_yes">Yes</label>
         </div>
         <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-            <label class="custom-control-label" for="customRadioInline2">No</label>
+            <input type="radio" id="property_pets_no" name="property_pets_no" class="custom-control-input">
+            <label class="custom-control-label" for="property_pets_no">No</label>
         </div>
     </div>
     <div class="form-group">
-        <label for="exampleFormControlInput2">Property ID</label>
-        <input type="number" class="form-control" id="exampleFormControlInput2" placeholder="0">
+        <label for="property_id">Property ID</label>
+        <input type="number" class="form-control" id="property_id" name="property_id" placeholder="0">
     </div>
     </form>
 </div>

@@ -303,4 +303,13 @@ class Property_Manager_Admin {
 	{
 		require_once 'partials/property-gallery.php';
 	}
+
+	public function save_custom_meta_box_data($post_id, $post)
+	{
+		error_log('POST Data');
+		error_log(print_r($_POST,true));
+
+		// $product_price = $_POST['product_price'];
+		// error_log('Logging POST DATA');
+	}
 }
