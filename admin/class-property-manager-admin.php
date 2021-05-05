@@ -284,7 +284,7 @@ class Property_Manager_Admin {
 			array($this,'property_details_content'),
 			'property',
 			'normal',
-			'high'
+			'low'
 		);
 		add_meta_box( 
 			'property_gallery',
@@ -311,7 +311,21 @@ class Property_Manager_Admin {
 	#region code for saving meta data from meta box
 	public function save_custom_meta_box_data($post_id, $post)
 	{
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+		$this->save_properties_data($post_id, $post);
 		$this->save_images_meta($post_id,$post);
+	}
+
+	public function save_properties_data($post_id, $post)
+	{
+	
+		$property_fields = array('property_price','property_bedrooms', 'property_bathrooms', 'property_area', 
+		'property_area', 'property_year', 'property_location', 'property_status', 'petsAllowed','property_id');
+		foreach($property_fields as $field)
+		{
+			update_post_meta( $post_id, $field, $_POST[$field] );
+		}
+		
 	}
 
 	public function save_images_meta($post_id, $post)

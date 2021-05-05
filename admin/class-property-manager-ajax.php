@@ -1,5 +1,6 @@
 <?php
 
+//Not using in anything ATM
 class Property_Manager_Ajax {
 
     public function example_ajax_request()
