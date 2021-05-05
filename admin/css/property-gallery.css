@@ -54,7 +54,7 @@
     z-index: 100;
 }
 .preview-image:hover > .image-zone {
-    cursor: move;
+    /* cursor: move; */
     opacity: .5;
 }
 .preview-image:hover > .tools-edit-image,

@@ -49,10 +49,10 @@ jQuery(window).ready(function() {
             myBase64 = myBase64.split(',')[1];
             if(currentObj == null)
             {
-                hidden.setAttribute('value', JSON.stringify([{base64: myBase64, title: 'title', num: element.getAttribute('data-unique')}]))
+                hidden.setAttribute('value', JSON.stringify([{base64: myBase64, title: 'title', num: element.getAttribute('data-unique'), custom_image: 1}]))
             }
             else{
-                var obj = {base64: myBase64, title:'title', num: element.getAttribute('data-unique')};
+                var obj = {base64: myBase64, title:'title', num: element.getAttribute('data-unique'), custom_image: 1};
                 currentObj.push(obj);
                 hidden.setAttribute('value', JSON.stringify(currentObj))
             }
@@ -92,11 +92,11 @@ function readImage() {
                 if(currentObj == null)
                 {
                     var base64parsed = picFile.result.split(',')[1];
-                    hidden.setAttribute('value', JSON.stringify([{base64: base64parsed, title: file.name, num: num-1}]))
+                    hidden.setAttribute('value', JSON.stringify([{base64: base64parsed, title: file.name, num: num-1, custom_image: 1}]))
                 }
                 else{
                     var base64parsed = picFile.result.split(',')[1];
-                    var obj = {base64: base64parsed, title:file.name, num: num-1};
+                    var obj = {base64: base64parsed, title:file.name, num: num-1, custom_image: 1};
                     currentObj.push(obj);
                     hidden.setAttribute('value', JSON.stringify(currentObj))
                 }

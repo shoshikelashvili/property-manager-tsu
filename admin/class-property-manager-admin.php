@@ -103,6 +103,8 @@ class Property_Manager_Admin {
 
 	}
 
+	#region code for adding property management menu
+
 	private $submenu_array = array(
 		['Name' => 'Settings', 'Slug' => 'settings', 'callback' => 'settings_display'],
 		['Name' => 'Add Properties', 'Slug' => 'add_properties', 'callback' => 'add_properties_display'],
@@ -184,6 +186,10 @@ class Property_Manager_Admin {
 	public function delete_properties_display(){
 		require_once 'partials/delete-properties.php';
 	}
+
+	#endregion
+
+	#region code for adding custom post type and taxonomies
 
 	//Functino for registering custom post type for peoprerties
 	public function custom_property_type(){
@@ -267,13 +273,9 @@ class Property_Manager_Admin {
 		register_taxonomy( 'property_types', array( 'property' ), $args );
 	}
 
-	public function disable_gutenberg($current_status, $post_type)
-	{
-		if ($post_type === 'property') return false;
-    	return $current_status;
-	}
+	#endregion
 
-
+	#region code for defining custom meta boxes and render functions
 	public function register_custom_metabox()
 	{
 		add_meta_box( 
@@ -304,23 +306,34 @@ class Property_Manager_Admin {
 		require_once 'partials/property-gallery.php';
 	}
 
+	#endregion
 
+	#region code for saving meta data from meta box
 	public function save_custom_meta_box_data($post_id, $post)
+	{
+		$this->save_images_meta($post_id,$post);
+	}
+
+	public function save_images_meta($post_id, $post)
 	{
 		//Delete original photos, before adding the current/new data
         $args = array(
             'post_parent' => $post_id,
-            'post_type' => 'attachment'
+            'post_type' => 'attachment',
+			'post__not_in'   => array(get_post_thumbnail_id($post_id)),
+            'meta_query' => array(
+                array(
+                    'key' => 'is_custom_image',
+                    'value' => '1',
+                    'compare' => '=',
+                )
+            )
         );
         
         $posts_array = get_posts($args);
-		error_log('logging posts arraay');
-		error_log(print_r($posts_array,true));
 		foreach($posts_array as $post)
 		{
 			$path_to_file = get_attached_file($post->ID);
-			error_log('deletion path is');
-			error_log(print_r($path_to_file,true));
 			wp_delete_file($path_to_file);
 			wp_delete_attachment($post->ID,true);
 		}
@@ -328,26 +341,18 @@ class Property_Manager_Admin {
 		$postId = $post_id;
 		$images_JSON = stripslashes($_POST['custom_image_data']);
 		$images_decoded = json_decode($images_JSON,true);
-		// error_log('DECODED IMAGES');
-		// error_log(print_r($images_decoded,true));
 		$directory = "/".date('Y')."/".date('m')."/";
 		$wp_upload_dir = wp_upload_dir();
 
 		$i = 0;
 		foreach($images_decoded as $image)
 		{
-			error_log('printing loop image');
-			error_log(print_r($image,true));
 			$base64 = $image['base64'];
 			$data = base64_decode($base64);
 			$filename = "IMG_".time().$i.".png";
 			$i++;
 			$fileurl = $wp_upload_dir['url'] . '/' . basename( $filename );
-			error_log('first fileurl is');
-			error_log($fileurl);
 			$fileurl = "../wp-content/uploads".$directory.$filename;
-			error_log('second fileurl is');
-			error_log($fileurl);
 			$filetype = wp_check_filetype( basename( $fileurl), null );
 
 			file_put_contents($fileurl, $data);
@@ -359,14 +364,24 @@ class Property_Manager_Admin {
 				'post_content' => '',
 				'post_status' => 'inherit'
 			);
-			//  print_r($attachment);
-			//echo "<br>file name :  $fileurl";
+			
 			$attach_id = wp_insert_attachment( $attachment, $fileurl ,$postId);
 			require_once('../wp-admin/includes/image.php' );
 
 			// Generate the metadata for the attachment, and update the database record.
 			$attach_data = wp_generate_attachment_metadata( $attach_id, $fileurl );
 			wp_update_attachment_metadata( $attach_id, $attach_data );
+			update_post_meta( $attach_id, 'is_custom_image', $image['custom_image'] );
 		}
+	}
+
+	#endregion
+
+
+	//Function for disabling gutenberg editor for property custom post type
+	public function disable_gutenberg($current_status, $post_type)
+	{
+		if ($post_type === 'property') return false;
+    	return $current_status;
 	}
 }

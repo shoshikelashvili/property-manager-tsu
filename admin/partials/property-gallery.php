@@ -27,7 +27,15 @@ wp_enqueue_script( 'property-gallery-js', plugin_dir_url( __FILE__ ) . '../js/pr
         global $post; 
         $args = array(
             'post_parent' => $post->ID,
-            'post_type' => 'attachment'
+            'post_type' => 'attachment',
+            'post__not_in'   => array(get_post_thumbnail_id($post->ID)),
+            'meta_query' => array(
+                array(
+                    'key' => 'is_custom_image',
+                    'value' => '1',
+                    'compare' => '=',
+                )
+            )
         );
         
         $posts_array = get_posts($args);
