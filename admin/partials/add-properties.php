@@ -29,23 +29,23 @@ $meta_values = get_post_meta($post->ID);
     </div>
     <div class="form-group">
         <label for="property_bedrooms">Bedrooms</label>
-        <input type="number" class="form-control" id="property_bedrooms" name="property_bedrooms" placeholder="0" <?php if($meta_values['property_bedrooms'][0] != 0) echo 'value='.$meta_values['property_bedrooms'][0]?>
+        <input type="number" class="form-control" id="property_bedrooms" name="property_bedrooms" placeholder="0" <?php if($meta_values['property_bedrooms'][0] != 0) echo 'value='.$meta_values['property_bedrooms'][0]?>>
     </div>
     <div class="form-group">
         <label for="property_bathrooms">Bathrooms</label>
-        <input type="number" class="form-control" id="property_bathrooms" name="property_bathrooms" placeholder="0" <?php if($meta_values['property_bathrooms'][0] != 0) echo 'value='.$meta_values['property_bathrooms'][0]?>
+        <input type="number" class="form-control" id="property_bathrooms" name="property_bathrooms" placeholder="0" <?php if($meta_values['property_bathrooms'][0] != 0) echo 'value='.$meta_values['property_bathrooms'][0]?>>
     </div>
     <div class="form-group">
         <label for="property_area">Area</label>
-        <input type="number" class="form-control" id="property_area" name="property_area" placeholder="0" <?php if($meta_values['property_area'][0] != 0) echo 'value='.$meta_values['property_area'][0]?>
+        <input type="number" class="form-control" id="property_area" name="property_area" placeholder="0" <?php if($meta_values['property_area'][0] != 0) echo 'value='.$meta_values['property_area'][0]?>>
     </div>
     <div class="form-group">
         <label for="property_year">Year Built</label>
-        <input type="number" class="form-control" id="property_year" name="property_year" placeholder="0" <?php if($meta_values['property_year'][0] != 0) echo 'value='.$meta_values['property_year'][0]?>
+        <input type="number" class="form-control" id="property_year" name="property_year" placeholder="0" <?php if($meta_values['property_year'][0] != 0) echo 'value='.$meta_values['property_year'][0]?>>
     </div>
     <div class="form-group">
         <label for="property_location">Location</label>
-        <input type="text" class="form-control" id="property_location" name="property_location" placeholder="Tbilisi" <?php if($meta_values['property_location'][0] != 0) echo 'value='.$meta_values['property_location'][0]?>
+        <input type="text" class="form-control" id="property_location" name="property_location" placeholder="Tbilisi" <?php if($meta_values['property_location'][0] != 0) echo 'value='.$meta_values['property_location'][0]?>>
     </div>
     <div class="form-group">
         <label for="property_status">Status</label>
