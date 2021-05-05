@@ -100,4 +100,24 @@ class Property_Manager_Public {
 
 	}
 
+
+	//Output properties shortcode
+	public function properties_shortcode_display(){
+		
+		wp_enqueue_style( 'properties-shortcode-css', plugin_dir_url( __FILE__ ) . 'css/properties-shortcode-display.css', array(), $this->version, 'all' );
+		$properties = get_posts(array('post_type' => 'property'));
+
+		echo '<div class="grid-container">';
+		foreach($properties as $property)
+		{
+			$featured_image = get_the_post_thumbnail($property->ID, array(600,360), array('class'=>'property-image'));
+			$property_data = get_post_meta($property->ID);
+			echo '<div class="grid-item">';
+			echo $property->post_title;
+			echo $featured_image;
+			echo '</div>';
+		}
+		echo '</div>';
+	}
+
 }
