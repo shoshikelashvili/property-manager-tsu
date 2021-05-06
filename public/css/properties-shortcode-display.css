@@ -1,11 +1,60 @@
 .grid-container {
     display: grid;
+    max-width: fit-content !important;
     grid-template-columns: auto auto auto;
+    /* grid-template-columns: repeat(3, lfr); */
+    /* grid-auto-rows: minmax(30vw, 160px); */
     padding: 10px;
   }
-  .grid-item {
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-  }
+.grid-item {
+  box-shadow: 0 0 8px rgb(0 0 0 / 15%);
+  padding: 20px;
+  margin: 5px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.grid-item img{
+  width: 400px !important;
+  height: 300px !important;
+  object-fit: cover;
+}
+
+.location{
+  text-align: left;
+  font-size: 1.3rem;
+}
+
+.bathrooms{
+  text-align: initial !important;
+  display:flex;
+  padding-top:1rem;
+}
+
+.bathrooms img{
+  width: auto !important;
+  height: 40px !important;
+}
+
+.bathroom-number{
+  padding-left: 0.5rem !important;
+}
+
+.appliances{
+  display: flex;
+}
+
+.bedrooms{
+  display:flex;
+  padding-left: 2rem;
+}
+
+.bedrooms img{
+  width: auto !important;
+  height: 68px !important;
+}
+
+.bedrooms-number{
+  line-height: 84px;
+  padding-left: 0.5rem;
+}

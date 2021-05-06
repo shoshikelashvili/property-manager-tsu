@@ -113,8 +113,22 @@ class Property_Manager_Public {
 			$featured_image = get_the_post_thumbnail($property->ID, array(600,360), array('class'=>'property-image'));
 			$property_data = get_post_meta($property->ID);
 			echo '<div class="grid-item">';
-			echo $property->post_title;
+			echo '<div class="title">' . $property->post_title . '</div>';
+			echo '<div class="photo">';
 			echo $featured_image;
+			echo '</div>';
+			echo '<div class="price">' . $property_data['property_price'][0] . '$</div>';
+			echo '<div class="location">' . $property_data['property_location'][0] . '</div>';
+			echo '<div class="appliances">';
+			echo '<div class="bathrooms">';
+			echo '<img class="bathroom-icon" src="https://www.freeiconspng.com/uploads/toilet-icon-png-17.png"/>';
+			echo '<div class="bathroom-number">' . $property_data['property_bathrooms'][0] . '</div>';
+			echo '</div>';
+			echo '<div class="bedrooms">';
+			echo '<img class="bedrooms-icon" src="https://www.freeiconspng.com/uploads/bedroom-icon-0.png"/>';
+			echo '<div class="bedrooms-number">' . $property_data['property_bedrooms'][0] . '</div>';
+			echo '</div>';
+			echo '</div>';
 			echo '</div>';
 		}
 		echo '</div>';
