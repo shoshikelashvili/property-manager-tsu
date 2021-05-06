@@ -107,6 +107,7 @@ class Property_Manager_Public {
 		wp_enqueue_style( 'properties-shortcode-css', plugin_dir_url( __FILE__ ) . 'css/properties-shortcode-display.css', array(), $this->version, 'all' );
 		$properties = get_posts(array('post_type' => 'property'));
 
+		ob_start();
 		echo '<div class="grid-container">';
 		foreach($properties as $property)
 		{
@@ -132,6 +133,8 @@ class Property_Manager_Public {
 			echo '</div>';
 		}
 		echo '</div>';
+		$output = ob_get_clean();
+		return $output;
 	}
-
+	
 }
