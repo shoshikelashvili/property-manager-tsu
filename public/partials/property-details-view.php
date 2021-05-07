@@ -17,12 +17,16 @@ wp_enqueue_style( 'splide-css', plugin_dir_url( __FILE__ ) . '../../vendor/splid
 wp_enqueue_script( 'property-details-view-js', plugin_dir_url( __FILE__ ) . '../js/property-details-view.js', array( 'jquery' ), $this->version, false );
 wp_enqueue_script( 'splide-js', plugin_dir_url( __FILE__ ) . '../../vendor/splide/dist/js/splide.min.js', array( 'jquery' ), $this->version, false );
 
+//Only import this if setting is set to yes
+wp_enqueue_style( 'property-details-view-theme-css', plugin_dir_url( __FILE__ ) . '../css/propeprty-details-view-theme-adjusted.css', array(), $this->version, 'all' );
+
 $property = get_post($this->property_id);
 $images = get_attached_media('image',$property);
 $property_data = get_post_meta($property);
 
 ?>
 
+<div class="property-title"><?php echo $property->post_title?></div>
 <div id="image-slider" class="splide">
 	<div class="splide__track">
 		<ul class="splide__list">
