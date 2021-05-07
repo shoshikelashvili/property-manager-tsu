@@ -102,9 +102,28 @@ class Property_Manager_Public {
 
 	//Output properties shortcode
 	public function properties_shortcode_display(){
-		
+		$pid = get_query_var('property_id');
+		$view_name = 'properties-grid-view';
+		if($pid)
+		{
+			$view_name = 'property-details-view';
+		}
 		$controller = new Property_Manager_Public_View_Controller($this->plugin_name, $this->version);
-		return $controller->render_view('properties-grid-view');
+		return $controller->render_view($view_name, $pid);
+	}
+
+	public function property_rewrite_rules(){
+		$current_url="http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+		$current_page_id = url_to_postid($current_url);
+		$current_page = get_post($current_page_id);
+
+		// Only affect properties with shortcode
+		if(has_shortcode($current_page->post_content, 'properties'))
+		{
+			add_rewrite_tag( '%property_id%', '([^/]+)');
+			add_rewrite_rule('^'.$current_page->post_name . '/([0-9]+)/?', 'index.php?pagename=' . $current_page->post_name . '&property_id=$matches[1]', 'top');
+		}
+		flush_rewrite_rules();
 	}
 	
 }
