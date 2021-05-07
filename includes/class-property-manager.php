@@ -115,6 +115,7 @@ class Property_Manager {
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-property-manager-admin.php';
+		
 
 		/**
 		 * The class responsible for defining all ajax for admin panel
@@ -126,6 +127,12 @@ class Property_Manager {
 		 * side of the site.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-property-manager-public.php';
+
+		/**
+		 * The class responsible for defining all actions that occur in the public-facing
+		 * side of the site.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-property-manager-controller.php';
 
 		$this->loader = new Property_Manager_Loader();
 

@@ -51,7 +51,6 @@ class Property_Manager_Public {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-
 	}
 
 	/**
@@ -104,37 +103,8 @@ class Property_Manager_Public {
 	//Output properties shortcode
 	public function properties_shortcode_display(){
 		
-		wp_enqueue_style( 'properties-shortcode-css', plugin_dir_url( __FILE__ ) . 'css/properties-shortcode-display.css', array(), $this->version, 'all' );
-		$properties = get_posts(array('post_type' => 'property'));
-
-		ob_start();
-		echo '<div class="grid-container">';
-		foreach($properties as $property)
-		{
-			$featured_image = get_the_post_thumbnail($property->ID, array(600,360), array('class'=>'property-image'));
-			$property_data = get_post_meta($property->ID);
-			echo '<div class="grid-item">';
-			echo '<div class="title">' . $property->post_title . '</div>';
-			echo '<div class="photo">';
-			echo $featured_image;
-			echo '</div>';
-			echo '<div class="price">' . $property_data['property_price'][0] . '$</div>';
-			echo '<div class="location">' . $property_data['property_location'][0] . '</div>';
-			echo '<div class="appliances">';
-			echo '<div class="bathrooms">';
-			echo '<img class="bathroom-icon" src="https://www.freeiconspng.com/uploads/toilet-icon-png-17.png"/>';
-			echo '<div class="bathroom-number">' . $property_data['property_bathrooms'][0] . '</div>';
-			echo '</div>';
-			echo '<div class="bedrooms">';
-			echo '<img class="bedrooms-icon" src="https://www.freeiconspng.com/uploads/bedroom-icon-0.png"/>';
-			echo '<div class="bedrooms-number">' . $property_data['property_bedrooms'][0] . '</div>';
-			echo '</div>';
-			echo '</div>';
-			echo '</div>';
-		}
-		echo '</div>';
-		$output = ob_get_clean();
-		return $output;
+		$controller = new Property_Manager_Public_View_Controller($this->plugin_name, $this->version);
+		return $controller->render_view('properties-grid-view');
 	}
 	
 }
