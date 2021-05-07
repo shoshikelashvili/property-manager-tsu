@@ -134,6 +134,12 @@ class Property_Manager {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-property-manager-controller.php';
 
+		/**
+		 * The class responsible for defining all actions that occur in the public-facing
+		 * side of the site.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-property-manager-fields.php';
+
 		$this->loader = new Property_Manager_Loader();
 
 	}

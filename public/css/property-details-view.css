@@ -7,3 +7,41 @@
     text-align: center;
     font-size: 4rem;
 }
+
+.property_description{
+    background-color: white !important;
+    max-width: 80rem !important;
+    padding: 2rem !important;
+}
+
+.description-title{
+    font-size: 2rem;
+}
+
+.property_details{
+    background-color: white !important;
+    max-width: 80rem !important;
+    padding: 2rem !important;
+}
+
+.property_details ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.property_details .details_label{
+    font-size: 2rem;
+}
+
+.additional_details{
+    background-color: white !important;
+    max-width: 80rem !important;
+    padding: 2rem !important;
+}
+
+.additional_details ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

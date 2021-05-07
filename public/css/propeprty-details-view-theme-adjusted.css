@@ -5,3 +5,8 @@
 #masthead{
     display: none;
 }
+
+.edit-link
+{
+    display:none !important;
+}

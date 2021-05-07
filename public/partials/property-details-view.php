@@ -22,8 +22,7 @@ wp_enqueue_style( 'property-details-view-theme-css', plugin_dir_url( __FILE__ ) 
 
 $property = get_post($this->property_id);
 $images = get_attached_media('image',$property);
-$property_data = get_post_meta($property);
-
+$property_data = get_post_meta($this->property_id);
 ?>
 
 <div class="property-title"><?php echo $property->post_title?></div>
@@ -38,4 +37,71 @@ $property_data = get_post_meta($property);
         ?>
 		</ul>
 	</div>
+</div>
+
+<div class="property_description">
+    <div class="description-title">Property Description</div>
+    <span><?php echo $property->post_content?></span>
+</div>
+
+<div class="property_details">
+    <div class="details_label">Basic Details</div>
+    <ul>
+        <?php 
+        $field_metadata = Property_Manager_Fields::get_fields_associative();
+        foreach($property_data as $field => $field_value)
+        {
+            foreach($field_metadata as $key => $value)
+            {
+                if($field == $key && $field_value[0])
+                {
+                    if($value == 'Price') $field_value[0] .= '$';
+                    if($value == 'Area') $field_value[0] .= 'Sqft';
+                    echo '<li>';
+                    echo '<span class="field_name">' . $value . ':</span>';
+                    echo '<span class="field_value">  ' . $field_value[0] . '</span>';
+                    echo '</li>';
+                    break;
+                }
+            }
+        }
+        ?>
+        <!-- <li>
+            <span class="field_name">Name</span>
+            <span class="field_value">Value</span>
+        </li> -->
+    </ul>
+</div>
+
+<div class="additional_details">
+    <div class="description-title">Additional Details</div>
+    <ul>
+    <?php 
+    foreach($property_data as $field => $field_value)
+    {
+        $included = false;
+        foreach($field_metadata as $key => $value)
+        {
+            if($field == $key || $field[0] == '_')
+            {
+                $included = true;
+                // if($value == 'Price') $field_value[0] .= '$';
+                // if($value == 'Area') $field_value[0] .= 'Sqft';
+                // echo '<li>';
+                // echo '<span class="field_name">' . $value . ':</span>';
+                // echo '<span class="field_value">' . $field_value[0] . '</span>';
+                // echo '</li>';
+                break;
+            }
+        }
+        if(!$included)
+        {
+            echo '<li>';
+            echo '<span class="field_name">' . $field . ':</span>';
+            echo '<span class="field_value">  ' . $field_value[0] . '</span>';
+            echo '</li>';
+        }
+    }
+    ?>
+    </ul>
 </div>
