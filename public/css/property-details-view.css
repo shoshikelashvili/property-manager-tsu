@@ -18,10 +18,28 @@
     font-size: 2rem;
 }
 
+.property_taxonomies{
+    background-color: white !important;
+    max-width: 80rem !important;
+    padding: 2rem !important;
+    margin: 1rem !important;
+}
+
+.property_taxonomies ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.property_taxonomies .taxonomies_label{
+    font-size: 2rem;
+}
+
 .property_details{
     background-color: white !important;
     max-width: 80rem !important;
     padding: 2rem !important;
+    margin: 1rem !important;
 }
 
 .property_details ul{
@@ -44,4 +62,8 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+.details_holder{
+    display: flex;
 }

@@ -23,6 +23,9 @@ wp_enqueue_style( 'property-details-view-theme-css', plugin_dir_url( __FILE__ ) 
 $property = get_post($this->property_id);
 $images = get_attached_media('image',$property);
 $property_data = get_post_meta($this->property_id);
+
+$property_types = get_the_terms($property,'property_types');
+print_r($property_types);
 ?>
 
 <div class="property-title"><?php echo $property->post_title?></div>
@@ -44,35 +47,65 @@ $property_data = get_post_meta($this->property_id);
     <span><?php echo $property->post_content?></span>
 </div>
 
-<div class="property_details">
-    <div class="details_label">Basic Details</div>
-    <ul>
-        <?php 
-        $field_metadata = Property_Manager_Fields::get_fields_associative();
-        foreach($property_data as $field => $field_value)
-        {
-            foreach($field_metadata as $key => $value)
+<div class="details_holder">
+    <div class="property_details">
+        <div class="details_label">Basic Details</div>
+        <ul>
+            <?php 
+            $field_metadata = Property_Manager_Fields::get_fields_associative();
+            foreach($property_data as $field => $field_value)
             {
-                if($field == $key && $field_value[0])
+                foreach($field_metadata as $key => $value)
                 {
-                    if($value == 'Price') $field_value[0] .= '$';
-                    if($value == 'Area') $field_value[0] .= 'Sqft';
-                    echo '<li>';
-                    echo '<span class="field_name">' . $value . ':</span>';
-                    echo '<span class="field_value">  ' . $field_value[0] . '</span>';
-                    echo '</li>';
-                    break;
+                    if($field == $key && $field_value[0])
+                    {
+                        if($value == 'Price') $field_value[0] .= '$';
+                        if($value == 'Area') $field_value[0] .= 'Sqft';
+                        echo '<li>';
+                        echo '<span class="field_name">' . $value . ':</span>';
+                        echo '<span class="field_value">  ' . $field_value[0] . '</span>';
+                        echo '</li>';
+                        break;
+                    }
                 }
             }
-        }
-        ?>
-        <!-- <li>
-            <span class="field_name">Name</span>
-            <span class="field_value">Value</span>
-        </li> -->
-    </ul>
+            ?>
+            <!-- <li>
+                <span class="field_name">Name</span>
+                <span class="field_value">Value</span>
+            </li> -->
+        </ul>
+    </div>
+    <?php if(!empty($property_types[0]->name)): ?>
+    <div class="property_taxonomies">
+        <div class="taxonomies_label">Property Type</div>
+        <ul>
+            <?php 
+            $field_metadata = Property_Manager_Fields::get_fields_associative();
+            foreach($property_types as $type)
+            {
+                echo '<li>';
+                echo '<span class="field_value">' . $type->name . '</span>';
+                echo '</li>';
+            }
+            ?>
+            <!-- <li>
+                <span class="field_name">Name</span>
+                <span class="field_value">Value</span>
+            </li> -->
+        </ul>
+    </div>
+    <?php else: ?>
+        <div class="property_taxonomies">
+        <div class="taxonomies_label">Property Type</div>
+        <ul>
+            <li>
+                <span class="field_value">Unknown</span>
+            </li>
+        </ul>
+    </div>
+    <?php endif; ?>
 </div>
-
 <div class="additional_details">
     <div class="description-title">Additional Details</div>
     <ul>
