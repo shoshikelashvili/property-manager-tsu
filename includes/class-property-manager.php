@@ -192,7 +192,8 @@ class Property_Manager {
 		//Disable gutenberg editor for properties
 		$this->loader->add_filter('use_block_editor_for_post_type',$plugin_admin,'disable_gutenberg',10,2);
 
-
+		//Make new redirect for properties
+		$this->loader->add_action('template_redirect', $plugin_admin, 'custom_redirect');
 	}
 
 	/**

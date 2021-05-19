@@ -398,4 +398,24 @@ class Property_Manager_Admin {
 		if ($post_type === 'property') return false;
     	return $current_status;
 	}
+
+	public function custom_redirect(){
+		if( is_singular('property'))
+		{
+			global $wpdb;
+			$query = "SELECT ID, post_title, guid FROM ".$wpdb->posts." WHERE post_content LIKE '%[properties]%' AND post_status = 'publish'";
+			$results = $wpdb->get_results($query);
+			$new_url = '';
+			if(!empty($results))
+			{
+				$new_url = get_permalink($results[0]->ID);
+				$new_url .= get_queried_object_id();
+				wp_redirect($new_url);
+			}
+			else{
+				include('partials/no-shortcodes.php');
+				exit();
+			}
+		}
+	}
 }
