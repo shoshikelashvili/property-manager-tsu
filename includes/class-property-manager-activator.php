@@ -33,6 +33,7 @@ class Property_Manager_Activator {
 		// We need to register taxonomies on activation too, to ensure that they exist, otherwise we cant add dummy data
 		self::register_taxonomies();
 		self::insert_dummy_taxonomy_terms();
+		self::add_agent_roles();
 	}
 
 	private static function register_taxonomies()
@@ -78,6 +79,10 @@ class Property_Manager_Activator {
 				'slug'        => 'condo'
 			)
 		);
+	}
+
+	private static function add_agent_roles(){
+		add_role( 'agent', 'Agent', get_role( 'editor' )->capabilities);
 	}
 
 }

@@ -89,10 +89,6 @@ print_r($property_types);
                 echo '</li>';
             }
             ?>
-            <!-- <li>
-                <span class="field_name">Name</span>
-                <span class="field_value">Value</span>
-            </li> -->
         </ul>
     </div>
     <?php else: ?>
