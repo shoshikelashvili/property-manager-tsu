@@ -236,7 +236,9 @@ class Property_Manager_Admin {
 			'rewrite' => false,  // it shouldn't have rewrite rules
 			'menu_position'       => 5,
 			'has_archive'         => true,
-			'show_in_rest' => true
+			'show_in_rest' => true,
+			'capability_type'     => array('property','properties'),
+			'map_meta_cap'        => true,
 			// 'capability_type'     => 'post',
 			// 'show_in_rest' => true,
 	
@@ -416,6 +418,30 @@ class Property_Manager_Admin {
 				include('partials/no-shortcodes.php');
 				exit();
 			}
+		}
+	}
+
+	public function custom_property_capabilities(){
+		// Add the roles you'd like to administer the custom post types
+		$roles = array('agent','administrator');
+		
+		// Loop through each role and assign capabilities
+		foreach($roles as $the_role) { 
+ 
+		     $role = get_role($the_role);
+			
+	             $role->add_cap( 'read' );
+	             $role->add_cap( 'read_property');
+	             $role->add_cap( 'read_private_properties' );
+	             $role->add_cap( 'edit_property' );
+	             $role->add_cap( 'edit_properties' );
+	             $role->add_cap( 'edit_others_properties' );
+	             $role->add_cap( 'edit_published_properties' );
+	             $role->add_cap( 'publish_properties' );
+	             $role->add_cap( 'delete_others_properties' );
+	             $role->add_cap( 'delete_private_properties' );
+	             $role->add_cap( 'delete_published_properties' );
+		
 		}
 	}
 }

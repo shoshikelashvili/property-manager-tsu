@@ -194,6 +194,9 @@ class Property_Manager {
 
 		//Make new redirect for properties
 		$this->loader->add_action('template_redirect', $plugin_admin, 'custom_redirect');
+
+		//Set up property capabilities for agents and admins
+		$this->loader->add_action('admin_init', $plugin_admin, 'custom_property_capabilities');
 	}
 
 	/**

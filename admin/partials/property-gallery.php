@@ -29,6 +29,7 @@ wp_enqueue_script( 'property-gallery-js', plugin_dir_url( __FILE__ ) . '../js/pr
             'post_parent' => $post->ID,
             'post_type' => 'attachment',
             'post__not_in'   => array(get_post_thumbnail_id($post->ID)),
+            'nopaging' => true,
             'meta_query' => array(
                 array(
                     'key' => 'is_custom_image',
@@ -37,9 +38,7 @@ wp_enqueue_script( 'property-gallery-js', plugin_dir_url( __FILE__ ) . '../js/pr
                 )
             )
         );
-        
         $posts_array = get_posts($args);
-        // print_r($posts_array);
         if(!empty($posts_array))
         {
             foreach($posts_array as $post)
