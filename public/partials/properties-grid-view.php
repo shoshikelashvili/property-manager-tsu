@@ -15,7 +15,7 @@
 wp_enqueue_style( 'properties-shortcode-css', plugin_dir_url( __FILE__ ) . '../css/properties-shortcode-display.css', array(), $this->version, 'all' );
 wp_enqueue_script( 'properties-shortcode-js', plugin_dir_url( __FILE__ ) . '../js/properties-shortcode-display.js', array( 'jquery' ), $this->version, false );
 
-$properties = get_posts(array('post_type' => 'property'));
+$properties = get_posts(array('post_type' => 'property', 'nopaging' => true));
 
 echo '<div class="grid-container">';
 foreach($properties as $property)

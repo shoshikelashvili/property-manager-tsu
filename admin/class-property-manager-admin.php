@@ -337,6 +337,7 @@ class Property_Manager_Admin {
             'post_parent' => $post_id,
             'post_type' => 'attachment',
 			'post__not_in'   => array(get_post_thumbnail_id($post_id)),
+			'nopaging' => true,
             'meta_query' => array(
                 array(
                     'key' => 'is_custom_image',
