@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: property-manager-ka_GE\n"
-"POT-Creation-Date: 2021-05-20 23:21+0400\n"
-"PO-Revision-Date: 2021-05-20 23:22+0400\n"
+"POT-Creation-Date: 2021-05-20 23:29+0400\n"
+"PO-Revision-Date: 2021-05-20 23:31+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -14,109 +14,127 @@ msgstr ""
 "X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\tsu-project\\wp-content\\plugins"
 "\\property-manager\n"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:121
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:122
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:116
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:117
 msgid "Property Management"
 msgstr "უძრავი ქონების მენეჯმენტი"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:132
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:133
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:127
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:128
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/main-dashboard.php:20
 msgid "Settings"
 msgstr "პარამეტრები"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:141
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:142
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:136
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:137
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/main-dashboard.php:21
 msgid "Edit Properties"
 msgstr "ბინების რედაქტირება"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:189
-msgid "Properties"
-msgstr "ბინები"
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:182
+#, fuzzy
+msgid "Properies"
+msgstr "უძრავი ქონება"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:190
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:183
+msgid "Property"
+msgstr "ბინა"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:184
+msgid "Properties"
+msgstr "უძრავი ქონება"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:185
 msgid "All Properties"
 msgstr "ყველა ბინა"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:191
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:186
 msgid "View Property"
 msgstr "ნახე ბინა"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:192
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:193
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:187
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:188
 msgid "Add New Property"
 msgstr "დაამატე ახალი ბინა"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:194
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:189
 msgid "Edit Property"
-msgstr ""
+msgstr "ბინის რედაქტირება"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:195
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:190
 msgid "Update Property"
-msgstr ""
+msgstr "ბინის განახლება"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:196
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:191
 msgid "Search Property"
-msgstr ""
+msgstr "ბინის მოძებნა"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:197
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:192
 msgid "Property Not Found"
-msgstr ""
+msgstr "ბინა ვერ იპოვნა"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:199
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:194
 msgid "Property Not found in Trash"
-msgstr ""
+msgstr "ბინა ვერ იპოვნა ნაგავსაყრელში"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:205
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:200
 msgid "properties"
-msgstr ""
+msgstr "ბინები"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:206
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:201
 msgid "Holds properties and data about them"
-msgstr ""
+msgstr "ინახავს ბინებს და ინფორმაციას მათ შესახებ"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:245
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:238
+msgid "Property Types"
+msgstr "ყველა ბინის ტიპი"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:239
+#, fuzzy
+msgid "Property Type"
+msgstr "ახალი ბინის ტიპი"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:240
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-activator.php:44
 msgid "All Property Types"
-msgstr ""
+msgstr "ყველა ბინის ტიპი"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:246
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:241
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-activator.php:45
 msgid "New Property Type"
-msgstr ""
+msgstr "ახალი ბინის ტიპი"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:247
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:242
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-activator.php:46
 msgid "Add Property Type"
-msgstr ""
+msgstr "დაამატე ბინის ტიპი"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:248
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:243
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-activator.php:47
 msgid "Edit Property Type"
-msgstr ""
+msgstr "დაარედაქტირე ბინის ტიპი"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:249
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:244
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-activator.php:48
 msgid "Update Property Type"
-msgstr ""
+msgstr "განაახლე ბინის ტიპი"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:250
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:245
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-activator.php:49
 msgid "View Property Type"
-msgstr ""
+msgstr "ნახე ბინის ტიპი"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:272
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:267
 msgid "Property Details"
-msgstr ""
+msgstr "ბინის დეტალები"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:280
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:275
 msgid "Property Gallery"
-msgstr ""
+msgstr "ბინის გალერია"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:56
 msgid "Property Description"
-msgstr ""
+msgstr "ბინის აღწერა"
 
 #~ msgid "Add/Edit/Delete Properties"
 #~ msgstr "ბინების რედაქტრიება"

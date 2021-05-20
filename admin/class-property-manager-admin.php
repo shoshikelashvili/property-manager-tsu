@@ -105,11 +105,6 @@ class Property_Manager_Admin {
 
 	#region code for adding property management menu
 
-	private $submenu_array = array(
-		['Name' => 'Settings', 'Slug' => 'settings', 'callback' => 'settings_display'],
-		['Name' => 'Add/Edit/Delete Properties', 'Slug' => 'add_edit_delete_properties', 'callback' => 'add_edit_delete_properties_display'],
-	);
-
 	/**
 	 * Adds custom settings menu
 	 *
@@ -184,19 +179,19 @@ class Property_Manager_Admin {
 		* Creating a function to create our CPT
 		*/
 		$labels = array(
-			'name'                => _x( 'Properies', 'Post Type General Name'),
-			'singular_name'       => _x( 'Property', 'Post Type Singular Name'),
-			'menu_name'           => __( 'Properties'),
-			'all_items'           => __( 'All Properties'),
-			'view_item'           => __( 'View Property'),
-			'add_new_item'        => __( 'Add New Property'),
-			'add_new'             => __( 'Add New Property'),
-			'edit_item'           => __( 'Edit Property'),
-			'update_item'         => __( 'Update Property'),
-			'search_items'        => __( 'Search Property'),
-			'not_found'           => __( 'Property Not Found'),
+			'name'                => __('Properies', 'property-manager'),
+			'singular_name'       => __('Property', 'property-manager'),
+			'menu_name'           => __( 'Properties', 'property-manager'),
+			'all_items'           => __( 'All Properties', 'property-manager'),
+			'view_item'           => __( 'View Property', 'property-manager'),
+			'add_new_item'        => __( 'Add New Property', 'property-manager'),
+			'add_new'             => __( 'Add New Property', 'property-manager'),
+			'edit_item'           => __( 'Edit Property', 'property-manager'),
+			'update_item'         => __( 'Update Property', 'property-manager'),
+			'search_items'        => __( 'Search Property', 'property-manager'),
+			'not_found'           => __( 'Property Not Found', 'property-manager'),
 			'parent_item_colon'  => '',
-			'not_found_in_trash'  => __( 'Property Not found in Trash'),
+			'not_found_in_trash'  => __( 'Property Not found in Trash', 'property-manager'),
 		);
 		
 		// Set other options for Custom Post Type
@@ -240,14 +235,14 @@ class Property_Manager_Admin {
 
 	public function register_custom_taxonomies(){
 		$labels = array(
-			'name'                       => _x( 'Property Types', 'taxonomy general name'),
-			'singular_name'              => _x( 'Property Type', 'Taxonomy Singular Name'),
-			'all_items'                  => __( 'All Property Types', 'text_domain' ),
-			'new_item_name'              => __( 'New Property Type', 'text_domain' ),
-			'add_new_item'               => __( 'Add Property Type', 'text_domain' ),
-			'edit_item'                  => __( 'Edit Property Type', 'text_domain' ),
-			'update_item'                => __( 'Update Property Type', 'text_domain' ),
-			'view_item'                  => __( 'View Property Type', 'text_domain' )
+			'name'                       => __( 'Property Types', 'property-manager'),
+			'singular_name'              => __( 'Property Type', 'property-manager'),
+			'all_items'                  => __( 'All Property Types', 'property-manager' ),
+			'new_item_name'              => __( 'New Property Type', 'property-manager' ),
+			'add_new_item'               => __( 'Add Property Type', 'property-manager' ),
+			'edit_item'                  => __( 'Edit Property Type', 'property-manager' ),
+			'update_item'                => __( 'Update Property Type', 'property-manager' ),
+			'view_item'                  => __( 'View Property Type', 'property-manager' )
 		);
 		$args = array(
 			'labels'                     => $labels,
