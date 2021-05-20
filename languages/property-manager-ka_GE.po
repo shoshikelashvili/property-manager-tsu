@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: property-manager-ka_GE\n"
-"POT-Creation-Date: 2021-05-20 23:29+0400\n"
-"PO-Revision-Date: 2021-05-20 23:31+0400\n"
+"POT-Creation-Date: 2021-05-20 23:34+0400\n"
+"PO-Revision-Date: 2021-05-20 23:35+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,11 +23,11 @@ msgstr "უძრავი ქონების მენეჯმენტი"
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:128
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/main-dashboard.php:20
 msgid "Settings"
-msgstr "პარამეტრები"
+msgstr "პარამეტრების შეცვლა"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:136
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:137
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/main-dashboard.php:21
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/main-dashboard.php:22
 msgid "Edit Properties"
 msgstr "ბინების რედაქტირება"
 
@@ -131,6 +131,10 @@ msgstr "ბინის დეტალები"
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:275
 msgid "Property Gallery"
 msgstr "ბინის გალერია"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/main-dashboard.php:21
+msgid "algebra"
+msgstr "ალგებრა"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:56
 msgid "Property Description"
