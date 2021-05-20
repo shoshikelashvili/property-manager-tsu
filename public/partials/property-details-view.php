@@ -22,10 +22,20 @@ wp_enqueue_style( 'property-details-view-theme-css', plugin_dir_url( __FILE__ ) 
 
 $property = get_post($this->property_id);
 $images = get_attached_media('image',$property);
+
+$thumbnail_id = get_post_thumbnail_id($property);
+
+//Reposition thumbnail at top
+if(in_array($thumbnail_id,array_keys($images)))
+{
+    $value = $images[$thumbnail_id];
+    unset($images[$thumbnail_id]);
+    array_unshift($images, $value);
+}
+
 $property_data = get_post_meta($this->property_id);
 
 $property_types = get_the_terms($property,'property_types');
-print_r($property_types);
 ?>
 
 <div class="property-title"><?php echo $property->post_title?></div>
