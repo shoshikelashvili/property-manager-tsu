@@ -19,6 +19,13 @@ wp_enqueue_script( 'add-properties-js', plugin_dir_url( __FILE__ ) . '../js/add-
 <?php
 global $post;
 $meta_values = get_post_meta($post->ID);
+
+$args = array(
+    'role'    => array('agent','administrator'),
+    'orderby' => 'user_nicename',
+    'order'   => 'ASC'
+);
+$users = get_users( $args );
 // var_dump($meta_values);
 ?>
 <div class="jumbotron">
@@ -72,6 +79,12 @@ $meta_values = get_post_meta($post->ID);
     <div class="form-group">
         <label for="property_id">Property ID</label>
         <input type="text" class="form-control" id="property_id" name="property_id" placeholder="A10978033" <?php if($meta_values['property_id'][0] != 'A10978033') echo 'value='.$meta_values['property_id'][0]?>>
+    </div>
+    <div class="form-group">
+        <label for="property_agent">Agent</label>
+        <select class="form-control" id="property_agent" name="property_agent">
+        <option>Active</option>
+        </select>
     </div>
     </form>
 </div>

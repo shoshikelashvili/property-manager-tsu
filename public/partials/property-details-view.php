@@ -53,7 +53,7 @@ $property_types = get_the_terms($property,'property_types');
 </div>
 
 <div class="property_description">
-    <div class="description-title">Property Description</div>
+    <div class="description-title"><?php echo __('Property Description','property-manager')?></div>
     <span><?php echo $property->post_content?></span>
 </div>
 

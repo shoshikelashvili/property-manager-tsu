@@ -17,8 +17,6 @@ wp_enqueue_script( 'main-dashboard-js', plugin_dir_url( __FILE__ ) . '../js/main
 ?>
 
 <div class="main-dashboard">
-    <button id="settings" type="button" class="btn btn-secondary btn-lg" onclick="redirect(this.id)">Settings</button>
-    <button id="add_properties" type="button" class="btn btn-secondary btn-lg" onclick="redirect(this.id)">Add Property</button>
-    <button id="edit_properties" type="button" class="btn btn-secondary btn-lg" onclick="redirect(this.id)">Edit Property</button>
-    <button id="delete_properties" type="button" class="btn btn-secondary btn-lg" onclick="redirect(this.id)">Delete Property</button>
+    <button id="settings" type="button" class="btn btn-secondary btn-lg" onclick="redirect(this.id)"><?php _e('Settings') ?></button>
+    <button id="add_edit_delete_properties" type="button" class="btn btn-secondary btn-lg" onclick="redirect(this.id)"> <?php _e('Edit Properties') ?></button>
 </div> 

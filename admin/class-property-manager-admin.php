@@ -107,9 +107,7 @@ class Property_Manager_Admin {
 
 	private $submenu_array = array(
 		['Name' => 'Settings', 'Slug' => 'settings', 'callback' => 'settings_display'],
-		['Name' => 'Add Properties', 'Slug' => 'add_properties', 'callback' => 'add_properties_display'],
-		['Name' => 'Edit Properties', 'Slug' => 'edit_properties', 'callback' => 'edit_properties_display'],
-		['Name' => 'Delete Properties', 'Slug' => 'delete_properties', 'callback' => 'delete_properties_display'],
+		['Name' => 'Add/Edit/Delete Properties', 'Slug' => 'add_edit_delete_properties', 'callback' => 'add_edit_delete_properties_display'],
 	);
 
 	/**
@@ -120,8 +118,8 @@ class Property_Manager_Admin {
 	public function add_manager_menu() {
 
 		add_menu_page(
-            'Property Management',
-            'Property Management',
+            __('Property Management','property-manager'),
+            __('Property Management','property-manager'),
             'manage_options',
             'property_management',
             array($this, 'main_dashboard_display'),
@@ -129,17 +127,24 @@ class Property_Manager_Admin {
             9
         );
 
-		foreach($this->submenu_array as $submenu)
-		{
-			add_submenu_page( 
-				'property_management', 
-				$submenu['Name'],
-				$submenu['Name'], 
-				'manage_options', 
-				$submenu['Slug'],
-				array( $this , $submenu['callback'] )
-			);
-		}
+		add_submenu_page( 
+			'property_management', 
+			__('Settings','property-manager'),
+			__('Settings','property-manager'), 
+			'manage_options', 
+			'settings',
+			array( $this , 'settings_display')
+		);
+
+		add_submenu_page( 
+			'property_management', 
+			__('Edit Properties','property-manager'),
+			__('Edit Properties','property-manager'), 
+			'manage_options', 
+			'add_edit_delete_properties',
+			array( $this , 'add_edit_delete_properties_display')
+		);
+		
 	}
 
 	/**
@@ -166,25 +171,7 @@ class Property_Manager_Admin {
 	 * @since    1.0.0
 	 */
 	public function add_properties_display(){
-		require_once 'partials/add-properties.php';
-	}
-
-	/**
-	 * Returning the edit properties view
-	 *
-	 * @since    1.0.0
-	 */
-	public function edit_properties_display(){
-		require_once 'partials/edit-properties.php';
-	}
-
-	/**
-	 * Returning the delete properties view
-	 *
-	 * @since    1.0.0
-	 */
-	public function delete_properties_display(){
-		require_once 'partials/delete-properties.php';
+		require_once 'partials/add-edit-delete-properties.php';
 	}
 
 	#endregion
