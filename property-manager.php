@@ -22,6 +22,10 @@
  * Domain Path:       /languages
  */
 
+//Deal with internationalization
+__('This is a plugin for managing, adding and editing properties, it is made as a university project', 'property-manager');
+__('Rati Shoshikelashvili, Irakli Kapanadze, Luka Metreveli', 'property-manager');
+
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;

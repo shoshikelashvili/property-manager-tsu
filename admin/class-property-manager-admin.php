@@ -264,7 +264,7 @@ class Property_Manager_Admin {
 	{
 		add_meta_box( 
 			'property_details',
-			__( 'Property Details'),
+			__( 'Property Details', 'property-manager'),
 			array($this,'property_details_content'),
 			'property',
 			'normal',
@@ -272,7 +272,7 @@ class Property_Manager_Admin {
 		);
 		add_meta_box( 
 			'property_gallery',
-			__( 'Property Gallery'),
+			__( 'Property Gallery', 'property-manager'),
 			array($this,'property_gallery_content'),
 			'property',
 			'normal',

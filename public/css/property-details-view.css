@@ -20,8 +20,9 @@
 
 .property_taxonomies{
     background-color: white !important;
-    max-width: 80rem !important;
+    /* max-width: 80rem !important; */
     padding: 2rem !important;
+    width: 33rem !important;
     margin: 1rem !important;
 }
 
@@ -37,7 +38,8 @@
 
 .property_details{
     background-color: white !important;
-    max-width: 80rem !important;
+    /* max-width: 80rem !important; */
+    width: 33rem !important;
     padding: 2rem !important;
     margin: 1rem !important;
 }

@@ -26,62 +26,61 @@ $args = array(
     'order'   => 'ASC'
 );
 $users = get_users( $args );
-// var_dump($meta_values);
 ?>
 <div class="jumbotron">
     <form>
     <div class="form-group">
-        <label for="property_price">Price</label>
+        <label for="property_price"><?php _e('Price', 'property-manager') ?></label>
         <input type="number" class="form-control" id="property_price" name="property_price" placeholder="0" <?php if($meta_values['property_price'][0] != 0) echo 'value='.$meta_values['property_price'][0]?>>
     </div>
     <div class="form-group">
-        <label for="property_bedrooms">Bedrooms</label>
+        <label for="property_bedrooms"><?php _e('Bedrooms', 'property-manager') ?></label>
         <input type="number" class="form-control" id="property_bedrooms" name="property_bedrooms" placeholder="0" <?php if($meta_values['property_bedrooms'][0] != 0) echo 'value='.$meta_values['property_bedrooms'][0]?>>
     </div>
     <div class="form-group">
-        <label for="property_bathrooms">Bathrooms</label>
+        <label for="property_bathrooms"><?php _e('Bathrooms', 'property-manager')?></label>
         <input type="number" class="form-control" id="property_bathrooms" name="property_bathrooms" placeholder="0" <?php if($meta_values['property_bathrooms'][0] != 0) echo 'value='.$meta_values['property_bathrooms'][0]?>>
     </div>
     <div class="form-group">
-        <label for="property_area">Area</label>
+        <label for="property_area"><?php _e('Area', 'property-manager')?></label>
         <input type="number" class="form-control" id="property_area" name="property_area" placeholder="0" <?php if($meta_values['property_area'][0] != 0) echo 'value='.$meta_values['property_area'][0]?>>
     </div>
     <div class="form-group">
-        <label for="property_year">Year Built</label>
+        <label for="property_year"><?php _e('Year Built', 'property-manager')?></label>
         <input type="number" class="form-control" id="property_year" name="property_year" placeholder="0" <?php if($meta_values['property_year'][0] != 0) echo 'value='.$meta_values['property_year'][0]?>>
     </div>
     <div class="form-group">
-        <label for="property_location">Location</label>
-        <input type="text" class="form-control" id="property_location" name="property_location" placeholder="Tbilisi" <?php if($meta_values['property_location'][0] != 0) echo 'value='.$meta_values['property_location'][0]?>>
+        <label for="property_location"><?php _e('Location', 'property-manager')?></label>
+        <input type="text" class="form-control" id="property_location" name="property_location" placeholder="Tbilisi" <?php if($meta_values['property_location'][0] != 0) echo 'value="'.$meta_values['property_location'][0] . '"'?>>
     </div>
     <div class="form-group">
-        <label for="property_status">Status</label>
+        <label for="property_status"><?php _e('Status', 'property-manager')?></label>
         <select class="form-control" id="property_status" name="property_status">
-        <option <?php if($meta_values['property_status'][0] == 'Active') echo "selected" ?>>Active</option>
-        <option <?php if($meta_values['property_status'][0] == 'Sold') echo "selected" ?>>Sold</option>
-        <option <?php if($meta_values['property_status'][0] == 'Closed') echo "selected" ?>>Closed</option>
-        <option <?php if($meta_values['property_status'][0] == 'Unavailable') echo "selected" ?>>Unavailable</option>
+        <option <?php if($meta_values['property_status'][0] == __('Active', 'property-manager')) echo "selected" ?>><?php _e('Active','property-manager')?></option>
+        <option <?php if($meta_values['property_status'][0] == __('Sold', 'property-manager')) echo "selected" ?>><?php _e('Sold','property-manager')?></option>
+        <option <?php if($meta_values['property_status'][0] == __('Closed','property-manager')) echo "selected" ?>><?php _e('Closed','property-manager')?></option>
+        <option <?php if($meta_values['property_status'][0] == __('Unavailable','property-manager')) echo "selected" ?>><?php _e('Unavailable','property-manager')?></option>
         </select>
     </div>
-    <div class="petsText"> Pets Allowed</div>
+    <div class="petsText"> <?php _e('Pets Allowed', 'property-manager')?></div>
     <div class="form-check">
         <input class="form-check-input" type="radio" name="petsAllowed" id="petsAllowedYes" value="Yes" <?php if(empty($meta_values['petsAllowed'][0]) || $meta_values['petsAllowed'][0] == 'Yes') echo 'checked'?>>
         <label class="form-check-label" for="petsAllowedYes">
-            Yes
+        <?php _e('Yes', 'property-manager')?>
         </label>
     </div>
     <div class="form-check">
         <input class="form-check-input" type="radio" name="petsAllowed" id="petsAllowedNo" value="No" <?php if($meta_values['petsAllowed'][0] == 'No') echo 'checked'?>>
         <label class="form-check-label" for="petsAllowedNo">
-            No
+        <?php _e('No', 'property-manager')?>
         </label>
     </div>
     <div class="form-group">
-        <label for="property_id">Property ID</label>
-        <input type="text" class="form-control" id="property_id" name="property_id" placeholder="A10978033" <?php if($meta_values['property_id'][0] != 'A10978033') echo 'value='.$meta_values['property_id'][0]?>>
+        <label for="property_id"><?php _e('Property ID', 'property-manager')?></label>
+        <input type="text" class="form-control" id="property_id" name="property_id" placeholder="10978033" <?php if($meta_values['property_id'][0] != 'A10978033') echo 'value='.$meta_values['property_id'][0]?>>
     </div>
     <div class="form-group">
-        <label for="property_agent">Agent</label>
+        <label for="property_agent"><?php _e('Agent', 'property-manager')?></label>
         <select class="form-control" id="property_agent" name="property_agent">
         <option>Active</option>
         </select>

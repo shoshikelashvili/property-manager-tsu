@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: property-manager-ka_GE\n"
-"POT-Creation-Date: 2021-05-20 23:34+0400\n"
-"PO-Revision-Date: 2021-05-20 23:35+0400\n"
+"POT-Creation-Date: 2021-05-24 07:49+0400\n"
+"PO-Revision-Date: 2021-05-24 07:49+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -13,6 +13,18 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\tsu-project\\wp-content\\plugins"
 "\\property-manager\n"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/property-manager.php:26
+msgid ""
+"This is a plugin for managing, adding and editing properties, it is made as "
+"a university project"
+msgstr ""
+"ეს პლაგინი შექმნილია უძრავი ქონების მენეჯმენტისთვის, დამატებისთვის და "
+"შეცვლისთვის. შექმნილია როგორც თსუ-ის პროექტი."
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/property-manager.php:27
+msgid "Rati Shoshikelashvili, Irakli Kapanadze, Luka Metreveli"
+msgstr "რატი შოშიკელაშვილი, ირაკლი კაპანაძე, ლუკა მეტრეველი"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:116
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:117
@@ -27,7 +39,7 @@ msgstr "პარამეტრების შეცვლა"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:136
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:137
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/main-dashboard.php:22
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/main-dashboard.php:21
 msgid "Edit Properties"
 msgstr "ბინების რედაქტირება"
 
@@ -87,7 +99,7 @@ msgstr "ინახავს ბინებს და ინფორმაც
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:238
 msgid "Property Types"
-msgstr "ყველა ბინის ტიპი"
+msgstr "ბინის ტიპი"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:239
 #, fuzzy
@@ -132,13 +144,80 @@ msgstr "ბინის დეტალები"
 msgid "Property Gallery"
 msgstr "ბინის გალერია"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/main-dashboard.php:21
-msgid "algebra"
-msgstr "ალგებრა"
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:33
+msgid "Price"
+msgstr "ფასი"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:37
+msgid "Bedrooms"
+msgstr "საძინებელი"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:41
+msgid "Bathrooms"
+msgstr "საპირფარეშო"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:45
+msgid "Area"
+msgstr "ფართობი"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:49
+msgid "Year Built"
+msgstr "აშენების წელიწადი"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:53
+msgid "Location"
+msgstr "ადგილმდებარეობა"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:57
+msgid "Status"
+msgstr "ბინის სტატუსი"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:59
+msgid "Active"
+msgstr "იყიდება"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:60
+msgid "Sold"
+msgstr "ქირავდება"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:61
+msgid "Closed"
+msgstr "გაიცემა იჯარით"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:62
+msgid "Unavailable"
+msgstr "დროებით დახურულია"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:65
+msgid "Pets Allowed"
+msgstr "ცხოველები დაშვებულია?"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:69
+msgid "Yes"
+msgstr "კი"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:75
+msgid "No"
+msgstr "არა"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:79
+msgid "Property ID"
+msgstr "ბინის საიდენტიფიკაციო ნომერი"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:83
+msgid "Agent"
+msgstr "აგენტი"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/property-gallery.php:22
+msgid "Upload Images"
+msgstr "ატვირთე სურათები"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:56
 msgid "Property Description"
 msgstr "ბინის აღწერა"
+
+#~ msgid "algebra"
+#~ msgstr "ალგებრა"
 
 #~ msgid "Add/Edit/Delete Properties"
 #~ msgstr "ბინების რედაქტრიება"

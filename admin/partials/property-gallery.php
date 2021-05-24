@@ -19,7 +19,7 @@ wp_enqueue_script( 'property-gallery-js', plugin_dir_url( __FILE__ ) . '../js/pr
 <input type="hidden" id="image-hidden-field" name="custom_image_data">
 <div class="container">
     <fieldset class="form-group">
-        <a href="javascript:void(0)" onclick="jQuery('#pro-image').click()">Upload Images</a>
+        <a href="javascript:void(0)" onclick="jQuery('#pro-image').click()"><?php _e('Upload Images','property-manager')?></a>
         <input type="file" id="pro-image" name="pro-image" style="display: none;" class="form-control" multiple>
     </fieldset>
     <div class="preview-images-zone">

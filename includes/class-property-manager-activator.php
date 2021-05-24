@@ -63,20 +63,20 @@ class Property_Manager_Activator {
 
 	private static function insert_dummy_taxonomy_terms(){
 		wp_insert_term(
-			'Residential',   // the term 
+			'კომერციული ფართი',   // the term 
 			'property_types', // the taxonomy
 			array(
-				'description' => 'Residential Property',
-				'slug'        => 'residential'
+				'description' => 'კომერციული ფართი',
+				'slug'        => 'კომ-ფართი'
 			)
 		);
 
 		wp_insert_term(
-			'Condominium',   // the term 
+			'აგარაკი',   // the term 
 			'property_types', // the taxonomy
 			array(
-				'description' => 'Condo Property',
-				'slug'        => 'condo'
+				'description' => 'აგარაკი',
+				'slug'        => 'აგარაკი'
 			)
 		);
 	}
