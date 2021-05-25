@@ -39,7 +39,6 @@ $property_types = get_the_terms($property,'property_types');
 
 $agent_slug = $property_data['property_agent'][0];
 $agent = get_user_by('slug',$agent_slug);
-print_r($agent);
 ?>
 
 <div class="property-title"><?php echo $property->post_title?></div>
