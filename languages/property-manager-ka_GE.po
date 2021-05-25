@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: property-manager-ka_GE\n"
-"POT-Creation-Date: 2021-05-25 06:01+0400\n"
-"PO-Revision-Date: 2021-05-25 06:01+0400\n"
+"POT-Creation-Date: 2021-05-25 06:14+0400\n"
+"PO-Revision-Date: 2021-05-25 06:14+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -102,9 +102,9 @@ msgid "Property Types"
 msgstr "ბინის ტიპი"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:239
-#, fuzzy
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:106
 msgid "Property Type"
-msgstr "ახალი ბინის ტიპი"
+msgstr "ბინის ტიპი"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:240
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-activator.php:44
@@ -198,13 +198,16 @@ msgid "Unavailable"
 msgstr "დროებით დახურულია"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:65
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-fields.php:38
 msgid "Pets Allowed"
 msgstr "ცხოველები დაშვებულია?"
 
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:67
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:69
 msgid "Yes"
 msgstr "კი"
 
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:73
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:75
 msgid "No"
 msgstr "არა"
@@ -222,11 +225,6 @@ msgstr "აგენტი"
 msgid "Upload Images"
 msgstr "ატვირთე სურათები"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-fields.php:38
-#, fuzzy
-msgid "Pets allowed?"
-msgstr "ცხოველები დაშვებულია?"
-
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:56
 msgid "Property Description"
 msgstr "ბინის აღწერა"
@@ -234,6 +232,17 @@ msgstr "ბინის აღწერა"
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:62
 msgid "Basic Details"
 msgstr "ზოგადი ინფორმაცია"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:109
+msgid "Unknown"
+msgstr "უცნობია"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:116
+msgid "Additional Details"
+msgstr "დამატებითი ინფორმაცია"
+
+#~ msgid "Pets allowed?"
+#~ msgstr "ცხოველები დაშვებულია?"
 
 #~ msgid "algebra"
 #~ msgstr "ალგებრა"

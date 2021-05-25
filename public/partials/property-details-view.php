@@ -34,7 +34,6 @@ if(in_array($thumbnail_id,array_keys($images)))
 }
 
 $property_data = get_post_meta($this->property_id);
-print_r($property_data);
 
 $property_types = get_the_terms($property,'property_types');
 ?>
@@ -89,7 +88,7 @@ $property_types = get_the_terms($property,'property_types');
     </div>
     <?php if(!empty($property_types[0]->name)): ?>
     <div class="property_taxonomies">
-        <div class="taxonomies_label">Property Type</div>
+        <div class="taxonomies_label"><?php _e('Property Type','property-manager')?></div>
         <ul>
             <?php 
             $field_metadata = Property_Manager_Fields::get_fields_associative();
@@ -104,17 +103,17 @@ $property_types = get_the_terms($property,'property_types');
     </div>
     <?php else: ?>
         <div class="property_taxonomies">
-        <div class="taxonomies_label">Property Type</div>
+        <div class="taxonomies_label"><?php _e('Property Type','property-manager')?></div>
         <ul>
             <li>
-                <span class="field_value">Unknown</span>
+                <span class="field_value"><?php _e('Unknown','property-manager')?></span>
             </li>
         </ul>
     </div>
     <?php endif; ?>
 </div>
 <div class="additional_details">
-    <div class="description-title">Additional Details</div>
+    <div class="description-title"><?php _e('Additional Details','property-manager')?></div>
     <ul>
     <?php 
     foreach($property_data as $field => $field_value)
