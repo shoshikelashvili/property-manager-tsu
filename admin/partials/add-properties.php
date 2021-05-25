@@ -21,7 +21,7 @@ global $post;
 $meta_values = get_post_meta($post->ID);
 
 $args = array(
-    'role'    => array('agent','administrator'),
+    'role__in'    => array('agent','administrator'),
     'orderby' => 'user_nicename',
     'order'   => 'ASC'
 );
@@ -82,7 +82,19 @@ $users = get_users( $args );
     <div class="form-group">
         <label for="property_agent"><?php _e('Agent', 'property-manager')?></label>
         <select class="form-control" id="property_agent" name="property_agent">
-        <option>Active</option>
+        <?php
+        foreach($users as $user)
+        {
+            if($meta_values['property_agent'][0] == $user->data->user_login)
+            {
+                echo '<option selected>' . $user->data->user_login. '</option>';
+            }
+            else{
+                echo '<option>' . $user->data->user_login. '</option>';
+            }
+            
+        }
+        ?>
         </select>
     </div>
     </form>

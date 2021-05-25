@@ -82,7 +82,7 @@ class Property_Manager_Activator {
 	}
 
 	private static function add_agent_roles(){
-		add_role( 'agent', 'Agent', get_role( 'editor' )->capabilities);
+		add_role( 'agent', (__('Agent','property-manager')), get_role( 'editor' )->capabilities);
 	}
 
 }
