@@ -36,6 +36,10 @@ if(in_array($thumbnail_id,array_keys($images)))
 $property_data = get_post_meta($this->property_id);
 
 $property_types = get_the_terms($property,'property_types');
+
+$agent_slug = $property_data['property_agent'][0];
+$agent = get_user_by('slug',$agent_slug);
+print_r($agent);
 ?>
 
 <div class="property-title"><?php echo $property->post_title?></div>
@@ -111,11 +115,23 @@ $property_types = get_the_terms($property,'property_types');
         </ul>
     </div>
     <?php endif; ?>
+    <div class="property_agent">
+        <div class="agent_label"><?php _e('Agent Information','property-manager')?></div>
+        <div class="image_container">
+            <?php echo get_avatar($agent->data->ID,250);?>
+        </div>
+        <span class="agent_name"><?php echo $agent->data->display_name?></span>
+        <div class="agent_details">
+            <span class="agent_email"><?php echo $agent->data->user_email?></span>
+            <span class="agent_description"><?php echo get_user_meta($agent->data->ID, 'description', true)?></span>
+        </div>
+    </div>
 </div>
 <div class="additional_details">
     <div class="description-title"><?php _e('Additional Details','property-manager')?></div>
     <ul>
     <?php 
+    $are_additional_details = false;
     foreach($property_data as $field => $field_value)
     {
         $included = false;
@@ -133,13 +149,18 @@ $property_types = get_the_terms($property,'property_types');
                 break;
             }
         }
-        if(!$included)
+        if(!$included && $field != 'property_agent')
         {
+            $are_additional_details = true;
             echo '<li>';
             echo '<span class="field_name">' . $field . ':</span>';
             echo '<span class="field_value">  ' . $field_value[0] . '</span>';
             echo '</li>';
         }
+    }
+    if(!$are_additional_details)
+    {
+        echo '<span>' . __('Additional fields have not been filled in, in case of questions, contact the agent directly','property-manager') . '</span>';
     }
     ?>
     </ul>

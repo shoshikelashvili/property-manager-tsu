@@ -38,6 +38,23 @@
     font-size: 2rem;
 }
 
+.property_agent{
+    background-color: white !important;
+    /* max-width: 80rem !important; */
+    text-align: center;
+    padding: 2rem !important;
+    width: 33rem !important;
+    margin-left: 1rem !important;
+}
+
+.agent_details{
+    text-align: left !important;
+}
+
+.property_agent .agent_label{
+    font-size: 2rem;
+}
+
 .property_details{
     background-color: white !important;
     /* max-width: 80rem !important; */
