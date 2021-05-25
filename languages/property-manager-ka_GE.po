@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: property-manager-ka_GE\n"
-"POT-Creation-Date: 2021-05-24 07:49+0400\n"
-"PO-Revision-Date: 2021-05-24 07:49+0400\n"
+"POT-Creation-Date: 2021-05-25 06:01+0400\n"
+"PO-Revision-Date: 2021-05-25 06:01+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -145,30 +145,39 @@ msgid "Property Gallery"
 msgstr "ბინის გალერია"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:33
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-fields.php:31
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:72
 msgid "Price"
 msgstr "ფასი"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:37
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-fields.php:32
 msgid "Bedrooms"
 msgstr "საძინებელი"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:41
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-fields.php:33
 msgid "Bathrooms"
 msgstr "საპირფარეშო"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:45
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-fields.php:34
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:73
 msgid "Area"
 msgstr "ფართობი"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:49
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-fields.php:35
 msgid "Year Built"
 msgstr "აშენების წელიწადი"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:53
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-fields.php:36
 msgid "Location"
 msgstr "ადგილმდებარეობა"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:57
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-fields.php:37
 msgid "Status"
 msgstr "ბინის სტატუსი"
 
@@ -201,6 +210,7 @@ msgid "No"
 msgstr "არა"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:79
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-fields.php:39
 msgid "Property ID"
 msgstr "ბინის საიდენტიფიკაციო ნომერი"
 
@@ -212,9 +222,18 @@ msgstr "აგენტი"
 msgid "Upload Images"
 msgstr "ატვირთე სურათები"
 
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-fields.php:38
+#, fuzzy
+msgid "Pets allowed?"
+msgstr "ცხოველები დაშვებულია?"
+
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:56
 msgid "Property Description"
 msgstr "ბინის აღწერა"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:62
+msgid "Basic Details"
+msgstr "ზოგადი ინფორმაცია"
 
 #~ msgid "algebra"
 #~ msgstr "ალგებრა"

@@ -6,6 +6,8 @@
 .property-title{
     text-align: center;
     font-size: 4rem;
+    width: 100%;
+    max-width: 100% !important;
 }
 
 .property_description{
@@ -23,7 +25,7 @@
     /* max-width: 80rem !important; */
     padding: 2rem !important;
     width: 33rem !important;
-    margin: 1rem !important;
+    margin-left: 1rem !important;
 }
 
 .property_taxonomies ul{
@@ -41,7 +43,6 @@
     /* max-width: 80rem !important; */
     width: 33rem !important;
     padding: 2rem !important;
-    margin: 1rem !important;
 }
 
 .property_details ul{
@@ -68,4 +69,5 @@
 
 .details_holder{
     display: flex;
+    max-width: 80rem !important;
 }

@@ -64,13 +64,13 @@ $users = get_users( $args );
     </div>
     <div class="petsText"> <?php _e('Pets Allowed', 'property-manager')?></div>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="petsAllowed" id="petsAllowedYes" value="Yes" <?php if(empty($meta_values['petsAllowed'][0]) || $meta_values['petsAllowed'][0] == 'Yes') echo 'checked'?>>
+        <input class="form-check-input" type="radio" name="petsAllowed" id="petsAllowedYes" value="<?php _e('Yes','property-manager')?>" <?php if(empty($meta_values['petsAllowed'][0]) || $meta_values['petsAllowed'][0] == __('Yes','property-manager')) echo 'checked'?>>
         <label class="form-check-label" for="petsAllowedYes">
         <?php _e('Yes', 'property-manager')?>
         </label>
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="petsAllowed" id="petsAllowedNo" value="No" <?php if($meta_values['petsAllowed'][0] == 'No') echo 'checked'?>>
+        <input class="form-check-input" type="radio" name="petsAllowed" id="petsAllowedNo" value="<?php _e('No','property-manager')?>" <?php if($meta_values['petsAllowed'][0] == __('No','property-manager')) echo 'checked'?>>
         <label class="form-check-label" for="petsAllowedNo">
         <?php _e('No', 'property-manager')?>
         </label>

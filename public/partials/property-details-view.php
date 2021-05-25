@@ -34,6 +34,7 @@ if(in_array($thumbnail_id,array_keys($images)))
 }
 
 $property_data = get_post_meta($this->property_id);
+print_r($property_data);
 
 $property_types = get_the_terms($property,'property_types');
 ?>
@@ -59,7 +60,7 @@ $property_types = get_the_terms($property,'property_types');
 
 <div class="details_holder">
     <div class="property_details">
-        <div class="details_label">Basic Details</div>
+        <div class="details_label"><?php _e('Basic Details','property-manager')?></div>
         <ul>
             <?php 
             $field_metadata = Property_Manager_Fields::get_fields_associative();
@@ -69,8 +70,8 @@ $property_types = get_the_terms($property,'property_types');
                 {
                     if($field == $key && $field_value[0])
                     {
-                        if($value == 'Price') $field_value[0] .= '$';
-                        if($value == 'Area') $field_value[0] .= 'Sqft';
+                        if($value == __('Price','property-manager')) $field_value[0] .= '$';
+                        if($value == __('Area','property-manager')) $field_value[0] .= 'მ²';
                         echo '<li>';
                         echo '<span class="field_name">' . $value . ':</span>';
                         echo '<span class="field_value">  ' . $field_value[0] . '</span>';

@@ -22,11 +22,22 @@
  */
 class Property_Manager_Fields {
 
-    public static $fields = ['property_price' => 'Price', 'property_bedrooms' => 'Bedrooms', 'property_area' => 'Area', 'property_year' => 'Year Built',
-    'property_location' => 'Location', 'property_status' => 'Status', 'petsAllowed' => 'Pets allowed?', 'property_id' => 'Property ID', 'property_bathrooms' => 'Bathrooms'];
+    // public static $fields = ['property_price' => __('Price','property-manager'), 'property_bedrooms' => 'Bedrooms', 'property_area' => 'Area', 'property_year' => 'Year Built',
+    // 'property_location' => 'Location', 'property_status' => 'Status', 'petsAllowed' => 'Pets allowed?', 'property_id' => 'Property ID', 'property_bathrooms' => 'Bathrooms'];
     
+    public static $fields = array();
     static function get_fields_associative()
     {
+        self::$fields['property_price'] = __('Price','property-manager');
+        self::$fields['property_bedrooms'] = __('Bedrooms','property-manager');
+        self::$fields['property_bathrooms'] = __('Bathrooms','property-manager');
+        self::$fields['property_area'] = __('Area','property-manager');
+        self::$fields['property_year'] = __('Year Built','property-manager');
+        self::$fields['property_location'] = __('Location','property-manager');
+        self::$fields['property_status'] = __('Status','property-manager');
+        self::$fields['petsAllowed'] = __('Pets Allowed','property-manager');
+        self::$fields['property_id'] = __('Property ID','property-manager');
+    
         return self::$fields;
     }
 
