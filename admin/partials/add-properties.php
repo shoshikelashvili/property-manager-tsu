@@ -31,7 +31,7 @@ $users = get_users( $args );
     <form>
     <div class="form-group">
         <label for="property_price"><?php _e('Price', 'property-manager') ?></label>
-        <input type="number" class="form-control" id="property_price" name="property_price" placeholder="0" <?php if($meta_values['property_price'][0] != 0) echo 'value='.$meta_values['property_price'][0]?>>
+        <input required type="number" class="form-control" id="property_price" name="property_price" placeholder="0" <?php if($meta_values['property_price'][0] != 0) echo 'value='.$meta_values['property_price'][0]?>>
     </div>
     <div class="form-group">
         <label for="property_bedrooms"><?php _e('Bedrooms', 'property-manager') ?></label>

@@ -34,6 +34,11 @@ class Property_Manager_Activator {
 		self::register_taxonomies();
 		self::insert_dummy_taxonomy_terms();
 		self::add_agent_roles();
+
+		//Deal with internationalization
+		__('This is a plugin for managing, adding and editing properties, it is made as a university project', 'property-manager');
+		__('Rati Shoshikelashvili, Irakli Kapanadze, Luka Metreveli', 'property-manager');
+		__('Property Manager','property-manager');
 	}
 
 	private static function register_taxonomies()
