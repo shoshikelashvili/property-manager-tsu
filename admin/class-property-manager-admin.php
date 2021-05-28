@@ -100,12 +100,6 @@ class Property_Manager_Admin {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/property-manager-admin.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( 'bootstrap-js', plugin_dir_url( __FILE__ ) . 'js/bootstrap.min.js', array( 'jquery' ), $this->version, false );
-
-
-		//Jquery validation
-		// wp_enqueue_script('js_validate', 'js/jquery-validation-1.19.3/dist/jquery.validate.min.js', array('jquery'), $this->version, false);
-		// wp_enqueue_script('js_validate_ka', 'js/jquery-validation-1.19.3/src/localization/messages_ka.js', array('jquery'), $this->version, false);
-  		// wp_enqueue_script('custom_validator', 'custom_validate.js', array('jquery'), $this->version, false);
 	}
 
 	#region code for adding property management menu
