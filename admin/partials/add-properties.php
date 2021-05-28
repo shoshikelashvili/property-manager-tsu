@@ -28,30 +28,30 @@ $args = array(
 $users = get_users( $args );
 ?>
 <div class="jumbotron">
-    <form>
+    <form id='property_fields' novalidate>
     <div class="form-group">
         <label for="property_price"><?php _e('Price', 'property-manager') ?></label>
         <input required type="number" class="form-control" id="property_price" name="property_price" placeholder="0" <?php if($meta_values['property_price'][0] != 0) echo 'value='.$meta_values['property_price'][0]?>>
     </div>
     <div class="form-group">
         <label for="property_bedrooms"><?php _e('Bedrooms', 'property-manager') ?></label>
-        <input type="number" class="form-control" id="property_bedrooms" name="property_bedrooms" placeholder="0" <?php if($meta_values['property_bedrooms'][0] != 0) echo 'value='.$meta_values['property_bedrooms'][0]?>>
+        <input required type="number" class="form-control" id="property_bedrooms" name="property_bedrooms" placeholder="0" <?php if($meta_values['property_bedrooms'][0] != 0) echo 'value='.$meta_values['property_bedrooms'][0]?>>
     </div>
     <div class="form-group">
         <label for="property_bathrooms"><?php _e('Bathrooms', 'property-manager')?></label>
-        <input type="number" class="form-control" id="property_bathrooms" name="property_bathrooms" placeholder="0" <?php if($meta_values['property_bathrooms'][0] != 0) echo 'value='.$meta_values['property_bathrooms'][0]?>>
+        <input required type="number" class="form-control" id="property_bathrooms" name="property_bathrooms" placeholder="0" <?php if($meta_values['property_bathrooms'][0] != 0) echo 'value='.$meta_values['property_bathrooms'][0]?>>
     </div>
     <div class="form-group">
         <label for="property_area"><?php _e('Area', 'property-manager')?></label>
-        <input type="number" class="form-control" id="property_area" name="property_area" placeholder="0" <?php if($meta_values['property_area'][0] != 0) echo 'value='.$meta_values['property_area'][0]?>>
+        <input required type="number" class="form-control" id="property_area" name="property_area" placeholder="0" <?php if($meta_values['property_area'][0] != 0) echo 'value='.$meta_values['property_area'][0]?>>
     </div>
     <div class="form-group">
         <label for="property_year"><?php _e('Year Built', 'property-manager')?></label>
-        <input type="number" class="form-control" id="property_year" name="property_year" placeholder="0" <?php if($meta_values['property_year'][0] != 0) echo 'value='.$meta_values['property_year'][0]?>>
+        <input required type="number" class="form-control" id="property_year" name="property_year" placeholder="0" <?php if($meta_values['property_year'][0] != 0) echo 'value='.$meta_values['property_year'][0]?>>
     </div>
     <div class="form-group">
         <label for="property_location"><?php _e('Location', 'property-manager')?></label>
-        <input type="text" class="form-control" id="property_location" name="property_location" placeholder="Tbilisi" <?php if($meta_values['property_location'][0] != 0) echo 'value="'.$meta_values['property_location'][0] . '"'?>>
+        <input required type="text" class="form-control" id="property_location" name="property_location" placeholder="Tbilisi" <?php if($meta_values['property_location'][0] != 0) echo 'value="'.$meta_values['property_location'][0] . '"'?>>
     </div>
     <div class="form-group">
         <label for="property_status"><?php _e('Status', 'property-manager')?></label>
