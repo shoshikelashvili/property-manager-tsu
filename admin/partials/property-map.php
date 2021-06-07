@@ -12,6 +12,11 @@
  */
 wp_enqueue_style( 'property-map', plugin_dir_url( __FILE__ ) . '../css/property-map.css', array(), $this->version, 'all' );
 wp_enqueue_script( 'property-map-js', plugin_dir_url( __FILE__ ) . '../js/property-map.js', array( 'jquery' ), $this->version, false );
+
+
+global $post;
+$meta_values = get_post_meta($_GET['post']);
+print_r($meta_values);
 ?>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -22,5 +27,5 @@ wp_enqueue_script( 'property-map-js', plugin_dir_url( __FILE__ ) . '../js/proper
 integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
 crossorigin=""></script>
 
-<input type="hidden" id="mapCoordinates" name="custom_image_data"/>
+<input type="hidden" id="mapCoordinates" name="custom_map_data" <?php if($meta_values['custom_map_data'][0] != '') echo 'value="'.$meta_values['custom_map_data'][0].'"'?>/>
 <div id="mapid"></div>

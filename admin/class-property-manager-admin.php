@@ -314,9 +314,10 @@ class Property_Manager_Admin {
 
 	public function save_properties_data($post_id, $post)
 	{
-	
+		// error_log('printing POST during save');
+		// error_log(print_r($_POST,true));
 		$property_fields = array('property_price','property_bedrooms', 'property_bathrooms', 'property_area', 
-		'property_area', 'property_year', 'property_location', 'property_status', 'petsAllowed','property_id', 'property_agent');
+		'property_area', 'property_year', 'property_location', 'property_status', 'petsAllowed','property_id', 'property_agent', 'custom_map_data');
 		foreach($property_fields as $field)
 		{
 			update_post_meta( $post_id, $field, $_POST[$field] );
