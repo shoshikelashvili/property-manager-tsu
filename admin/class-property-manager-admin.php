@@ -277,6 +277,14 @@ class Property_Manager_Admin {
 			'normal',
 			'high'
 		);
+		add_meta_box( 
+			'property_map',
+			__( 'Property Map', 'property-manager'),
+			array($this,'property_map_content'),
+			'property',
+			'normal',
+			'high'
+		);
 	}
 
 	public function property_details_content()
@@ -287,6 +295,11 @@ class Property_Manager_Admin {
 	public function property_gallery_content()
 	{
 		require_once 'partials/property-gallery.php';
+	}
+
+	public function property_map_content()
+	{
+		require_once 'partials/property-map.php';
 	}
 
 	#endregion
