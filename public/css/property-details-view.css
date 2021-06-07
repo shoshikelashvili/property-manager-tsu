@@ -88,3 +88,15 @@
     display: flex;
     max-width: 80rem !important;
 }
+
+.back_to_properties{
+    display: flex;
+    max-width: 80rem !important;
+    cursor: pointer;
+}
+
+.back_to_properties svg{
+    height: 2rem;
+    width: auto;
+    padding-left: 0.4rem;
+}
