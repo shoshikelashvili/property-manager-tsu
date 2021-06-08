@@ -15,6 +15,7 @@
 wp_enqueue_style( 'property-details-view-css', plugin_dir_url( __FILE__ ) . '../css/property-details-view.css', array(), $this->version, 'all' );
 wp_enqueue_style( 'splide-css', plugin_dir_url( __FILE__ ) . '../../vendor/splide/dist/css/splide.min.css', array(), $this->version, 'all' );
 wp_enqueue_script( 'property-details-view-js', plugin_dir_url( __FILE__ ) . '../js/property-details-view.js', array( 'jquery' ), $this->version, false );
+wp_enqueue_script( 'property-details-view-map-js', plugin_dir_url( __FILE__ ) . '../js/property-details-view-map.js', array( 'jquery' ), $this->version, false );
 wp_enqueue_script( 'splide-js', plugin_dir_url( __FILE__ ) . '../../vendor/splide/dist/js/splide.min.js', array( 'jquery' ), $this->version, false );
 
 //Only import this if setting is set to yes
@@ -40,6 +41,17 @@ $property_types = get_the_terms($property,'property_types');
 $agent_slug = $property_data['property_agent'][0];
 $agent = get_user_by('slug',$agent_slug);
 ?>
+
+<!-- For Map functionality -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+crossorigin=""></script>
+
+
 
 <div class="property-title"><?php echo $property->post_title?></div>
 <div id="image-slider" class="splide">
@@ -126,6 +138,14 @@ $agent = get_user_by('slug',$agent_slug);
         </div>
     </div>
 </div>
+<div class="map_container">
+    <div class="textcontainer">
+        <?php _e('Property Map', 'property-manager');?>
+    </div>
+    <div id="mapid">
+    </div>
+</div>
+
 <div class="additional_details">
     <div class="description-title"><?php _e('Additional Details','property-manager')?></div>
     <ul>
@@ -148,7 +168,7 @@ $agent = get_user_by('slug',$agent_slug);
                 break;
             }
         }
-        if(!$included && $field != 'property_agent')
+        if(!$included && ($field != 'property_agent' && $field != 'custom_map_data'))
         {
             $are_additional_details = true;
             echo '<li>';
