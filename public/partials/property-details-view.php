@@ -16,6 +16,7 @@ wp_enqueue_style( 'property-details-view-css', plugin_dir_url( __FILE__ ) . '../
 wp_enqueue_style( 'splide-css', plugin_dir_url( __FILE__ ) . '../../vendor/splide/dist/css/splide.min.css', array(), $this->version, 'all' );
 wp_enqueue_script( 'property-details-view-js', plugin_dir_url( __FILE__ ) . '../js/property-details-view.js', array( 'jquery' ), $this->version, false );
 wp_enqueue_script( 'property-details-view-map-js', plugin_dir_url( __FILE__ ) . '../js/property-details-view-map.js', array( 'jquery' ), $this->version, false );
+wp_localize_script( 'property-details-view-map-js', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 wp_enqueue_script( 'splide-js', plugin_dir_url( __FILE__ ) . '../../vendor/splide/dist/js/splide.min.js', array( 'jquery' ), $this->version, false );
 
 //Only import this if setting is set to yes
@@ -138,6 +139,8 @@ crossorigin=""></script>
         </div>
     </div>
 </div>
+
+<?php if($property_data['custom_map_data'][0] != '') :?>
 <div class="map_container">
     <div class="textcontainer">
         <?php _e('Property Map', 'property-manager');?>
@@ -145,6 +148,10 @@ crossorigin=""></script>
     <div id="mapid">
     </div>
 </div>
+<?php else: ?>
+<div></div>
+<?php endif;?>
+
 
 <div class="additional_details">
     <div class="description-title"><?php _e('Additional Details','property-manager')?></div>

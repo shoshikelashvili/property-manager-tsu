@@ -189,6 +189,7 @@ class Property_Manager {
 		$this->loader->add_action( 'save_post', $plugin_admin, 'save_custom_meta_box_data', 10, 2 );
 
 		$this->loader->add_action( 'wp_ajax_example_ajax_request', $plugin_ajax, 'example_ajax_request' ); 
+		$this->loader->add_action( 'wp_ajax_nopriv_example_ajax_request', $plugin_ajax, 'example_ajax_request' ); 
 		//Disable gutenberg editor for properties
 		$this->loader->add_filter('use_block_editor_for_post_type',$plugin_admin,'disable_gutenberg',10,2);
 
