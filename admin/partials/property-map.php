@@ -16,7 +16,6 @@ wp_enqueue_script( 'property-map-js', plugin_dir_url( __FILE__ ) . '../js/proper
 
 global $post;
 $meta_values = get_post_meta($_GET['post']);
-print_r($meta_values);
 ?>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
