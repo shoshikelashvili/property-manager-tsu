@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: property-manager-ka_GE\n"
-"POT-Creation-Date: 2021-06-08 08:24+0400\n"
-"PO-Revision-Date: 2021-06-08 08:24+0400\n"
+"POT-Creation-Date: 2021-06-25 17:43+0400\n"
+"PO-Revision-Date: 2021-06-25 17:44+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -11,6 +11,7 @@ msgstr ""
 "X-Generator: Poedit 1.5.7\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\tsu-project\\wp-content\\plugins"
 "\\property-manager\n"
 
@@ -90,8 +91,8 @@ msgid "Property Types"
 msgstr "ბინის ტიპი"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:238
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:106
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:121
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:107
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:122
 msgid "Property Type"
 msgstr "ბინის ტიპი"
 
@@ -134,13 +135,13 @@ msgid "Property Gallery"
 msgstr "ბინის გალერია"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/class-property-manager-admin.php:282
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:143
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:146
 msgid "Property Map"
 msgstr "ბინის ადგილმდებარეობა რუკაზე"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:33
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-fields.php:31
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:87
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:88
 msgid "Price"
 msgstr "ფასი"
 
@@ -165,7 +166,7 @@ msgstr "საპირფარეშო"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/add-properties.php:45
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-fields.php:34
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:88
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:89
 msgid "Area"
 msgstr "ფართობი"
 
@@ -229,6 +230,30 @@ msgstr "აგენტი"
 msgid "Upload Images"
 msgstr "ატვირთე სურათები"
 
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:23
+msgid "Leaflet Map API Key"
+msgstr "Leaflet რუკის API გასაღები"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:29
+msgid "Price Currency"
+msgstr "ფასის ვალუტა"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:35
+msgid "Area Format"
+msgstr "ფართობის ფორმატი"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:37
+msgid "Square metre (m²)"
+msgstr "კვადრატული მეტრი (მ²)"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:38
+msgid "Square kilometre (km²)"
+msgstr "კვადრატული კილომეტრი (კმ²)"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:39
+msgid "Hectare (ha)"
+msgstr "ჰექტარი (ჰა)"
+
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-activator.php:39
 msgid ""
 "This is a plugin for managing, adding and editing properties, it is made as "
@@ -245,27 +270,27 @@ msgstr "რატი შოშიკელაშვილი, ირაკლი
 msgid "Property Manager"
 msgstr "უძრავი ქონების მენეჯერი"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:71
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:72
 msgid "Property Description"
 msgstr "ბინის აღწერა"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:77
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:78
 msgid "Basic Details"
 msgstr "ზოგადი ინფორმაცია"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:124
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:125
 msgid "Unknown"
 msgstr "უცნობია"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:130
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:131
 msgid "Agent Information"
 msgstr "ინფორმაცია აგენტზე"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:150
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:157
 msgid "Additional Details"
 msgstr "დამატებითი ინფორმაცია"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:182
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:189
 msgid ""
 "Additional fields have not been filled in, in case of questions, contact the "
 "agent directly"
@@ -273,7 +298,7 @@ msgstr ""
 "დამატებითი ველები არ შევსებულა, კითხვების არსებობის შემთხვევაში დაუკავშირდით "
 "აგენტს"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:188
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/public/partials/property-details-view.php:195
 msgid "Back to the property listings"
 msgstr "დაბრუნდი უძრავი ქონების კატალოგზე"
 
