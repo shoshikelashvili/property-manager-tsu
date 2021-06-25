@@ -136,7 +136,7 @@ class Property_Manager_Admin {
 			__('Edit Properties','property-manager'), 
 			'manage_options', 
 			'add_edit_delete_properties',
-			array( $this , 'add_edit_delete_properties_display')
+			array( $this , 'add_properties_display')
 		);
 		
 	}
