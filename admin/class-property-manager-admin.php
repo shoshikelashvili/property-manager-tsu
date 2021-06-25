@@ -389,6 +389,13 @@ class Property_Manager_Admin {
 
 	#endregion
 
+	public function register_propertymanager_settings(){
+		register_setting('propertymanagersettings','leafletapi');
+		register_setting('propertymanagersettings','price_currency');
+		register_setting('propertymanagersettings','area_format');
+		register_setting('propertymanagersettings','map_boolean');
+		register_setting('propertymanagersettings','properties_per_page');
+	}
 
 	//Function for disabling gutenberg editor for property custom post type
 	public function disable_gutenberg($current_status, $post_type)

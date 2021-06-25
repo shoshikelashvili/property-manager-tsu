@@ -198,6 +198,9 @@ class Property_Manager {
 
 		//Set up property capabilities for agents and admins
 		$this->loader->add_action('admin_init', $plugin_admin, 'custom_property_capabilities');
+
+		//register general settings
+		$this->loader->add_action('admin_init', $plugin_admin, 'register_propertymanager_settings');
 	}
 
 	/**

@@ -1,4 +1,11 @@
 .settings_container{
-    margin: 1rem;
-    margin-top: 3rem;
+    padding: 2rem;
+    width: 34vw;
+    margin: auto;
+    margin-top: 11rem;
+    box-shadow: rgb(17 17 26 / 10%) 0px 4px 16px, rgb(17 17 26 / 10%) 0px 8px 24px, rgb(17 17 26 / 10%) 0px 16px 56px;
+}
+
+.form-group{
+    padding-bottom: 1rem;
 }

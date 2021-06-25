@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: property-manager-ka_GE\n"
-"POT-Creation-Date: 2021-06-25 17:43+0400\n"
-"PO-Revision-Date: 2021-06-25 17:44+0400\n"
+"POT-Creation-Date: 2021-06-26 02:02+0400\n"
+"PO-Revision-Date: 2021-06-26 02:03+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -230,29 +230,37 @@ msgstr "აგენტი"
 msgid "Upload Images"
 msgstr "ატვირთე სურათები"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:23
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:24
 msgid "Leaflet Map API Key"
 msgstr "Leaflet რუკის API გასაღები"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:29
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:32
 msgid "Price Currency"
 msgstr "ფასის ვალუტა"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:35
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:39
 msgid "Area Format"
 msgstr "ფართობის ფორმატი"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:37
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:41
 msgid "Square metre (m²)"
 msgstr "კვადრატული მეტრი (მ²)"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:38
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:42
 msgid "Square kilometre (km²)"
 msgstr "კვადრატული კილომეტრი (კმ²)"
 
-#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:39
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:43
 msgid "Hectare (ha)"
 msgstr "ჰექტარი (ჰა)"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:48
+msgid "Display map on property view?"
+msgstr "გამოვაჩინოთ რუკა ბინის დეტალებში?"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:53
+msgid "Amount of properties displayed per page"
+msgstr "ბინების რაოდენობა თითო გვერდზე"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-activator.php:39
 msgid ""
