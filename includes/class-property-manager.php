@@ -188,8 +188,12 @@ class Property_Manager {
 		//Save custom meta box data
 		$this->loader->add_action( 'save_post', $plugin_admin, 'save_custom_meta_box_data', 10, 2 );
 
+		//Ajax stuff
 		$this->loader->add_action( 'wp_ajax_example_ajax_request', $plugin_ajax, 'example_ajax_request' ); 
 		$this->loader->add_action( 'wp_ajax_nopriv_example_ajax_request', $plugin_ajax, 'example_ajax_request' ); 
+
+		$this->loader->add_action( 'wp_ajax_get_leaflet_key', $plugin_ajax, 'get_leaflet_key' ); 
+		$this->loader->add_action( 'wp_ajax_nopriv_get_leaflet_key', $plugin_ajax, 'get_leaflet_key' ); 
 		//Disable gutenberg editor for properties
 		$this->loader->add_filter('use_block_editor_for_post_type',$plugin_admin,'disable_gutenberg',10,2);
 

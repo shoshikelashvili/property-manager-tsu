@@ -12,4 +12,12 @@ class Property_Manager_Ajax {
 		// Always die in functions echoing AJAX content
         wp_die();
 	}
+
+    public function get_leaflet_key()
+	{
+        $key = get_option('leafletapi');
+        echo json_encode($key);
+		// Always die in functions echoing AJAX content
+        wp_die();
+	}
 }

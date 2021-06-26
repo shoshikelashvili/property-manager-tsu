@@ -23,6 +23,23 @@ jQuery(document).ready(function() {
             }
         });
 
+    var leafletapi;
+    jQuery.ajax(
+        {
+            type: "get",
+            dataType: "json",
+            url: my_ajax_object.ajax_url,
+            async: false,
+            data: {
+                action:'get_leaflet_key', //this value is first parameter of add_action,,
+            },
+            success: function(msg){
+                leafletapi = msg;
+                // storedCoords = msg[0];
+                    //output fruits to console
+            }
+        });
+
     console.log('stotredcoords',storedCoords);
 
     markerValueParsed = storedCoords.substring(7);
@@ -38,7 +55,7 @@ jQuery(document).ready(function() {
         id: 'mapbox/streets-v11',
         tileSize: 512,
         zoomOffset: -1,
-        accessToken: 'sk.eyJ1IjoicmF0aXNob3NoaWtlbGFzaHZpbGkiLCJhIjoiY2twbjRraTZ4MG0xNDJ2bWU1aHdwczYwMiJ9.tDqMD0egXlVCvzC2kEJAKA'
+        accessToken: leafletapi
     }).addTo(mymap);
 
     mainMarker = L.marker(markerArray).addTo(mymap);

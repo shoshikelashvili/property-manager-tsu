@@ -13,6 +13,7 @@
  */
 wp_enqueue_style( 'property-gallery', plugin_dir_url( __FILE__ ) . '../css/property-gallery.css', array(), $this->version, 'all' );
 wp_enqueue_script( 'property-gallery-js', plugin_dir_url( __FILE__ ) . '../js/property-gallery.js', array( 'jquery' ), $this->version, false );
+wp_localize_script( 'property-gallery-js', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 ?>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
