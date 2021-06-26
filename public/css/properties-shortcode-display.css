@@ -66,7 +66,7 @@
 }
 
 .property_pagination{
-  display: flex;
+  /* display: flex; */
   width: 70vw;
   max-width: none !important;
   flex-direction: row-reverse;
@@ -74,4 +74,15 @@
 
 .property_pagination .next_page{
   cursor: pointer;
+  text-align: right;
+}
+
+
+.property_pagination .previous_page{
+  cursor: pointer;
+  text-align: left;
+}
+
+#masthead{
+  display:none !important;
 }

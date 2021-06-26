@@ -30,11 +30,11 @@ else{
     $offset = 0;
 }
 
-echo $offset;
-$properties = get_posts(array('post_type' => 'property', 'posts_per_page' => $posts_per_page, 'orderby' => 'ID', 'offset' => $offset));
+// echo $offset;
+$properties = get_posts(array('post_type' => 'property', 'posts_per_page' => $posts_per_page, 'orderby' => 'ID', 'offset' => $offset, 'order' => 'ASC'));
 
-$last_post_id = get_posts(array('post_type' => 'property', 'posts_per_page' => 1, 'orderby' => 'ID', 'order' => 'ASC'))[0]->ID;
-$first_post_id = get_posts(array('post_type' => 'property', 'posts_per_page' => 1, 'orderby' => 'ID'))[0]->ID;
+$last_post_id = get_posts(array('post_type' => 'property', 'posts_per_page' => 1, 'orderby' => 'ID', 'order' => 'DESC'))[0]->ID;
+$first_post_id = get_posts(array('post_type' => 'property', 'posts_per_page' => 1, 'orderby' => 'ID', 'order' => 'ASC'))[0]->ID;
 $property_ids = array();
 foreach($properties as $p)
 {
@@ -75,7 +75,7 @@ echo '</div>';
     <div class="next_page" onclick="redirect()"><?php _e('Next Page', 'property-manager')?></div>
     <?php endif ?>
     <?php if(!in_array($first_post_id,$property_ids)): ?>
-    <div class="previous_page"><?php _e('Previous Page', 'property-manager')?></div>
+    <div class="previous_page" onclick="redirect_previous()"><?php _e('Previous Page', 'property-manager')?></div>
     <?php endif ?>
 </div>
 
