@@ -61,6 +61,27 @@ wp_enqueue_script( 'settings-js', plugin_dir_url( __FILE__ ) . '../js/settings.j
                 <option <?php if(get_option('properties_per_page') == '9') echo "selected"?> value="9">9</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="form-group">
+            <label class="my-1 mr-2" for="main_property_page"><?php _e('Main property page','property-manager')?></label>
+            <select class="custom-select my-1 mr-sm-2" id="main_property_page" name="main_property_page">
+                <?php 
+                global $wpdb;
+                $query = "SELECT ID, post_title, guid FROM ".$wpdb->posts." WHERE post_content LIKE '%[properties]%' AND post_status = 'publish'";
+                $results = $wpdb->get_results($query);
+                $current_selection = get_option('main_property_page');
+
+                foreach($results as $page)
+                {
+                    if($current_selection == $page->ID){
+                        echo '<option value="' . $page->ID . '" selected>' . $page->post_title . '</option>'; 
+                    }
+                    else{
+                        echo '<option value="' . $page->ID . '">' . $page->post_title . '</option>';
+                    }
+                }
+                ?>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary"><?php _e('Submit','property-manager');?></button>
     </form>
 </div>
