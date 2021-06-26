@@ -64,3 +64,14 @@
   line-height: 84px;
   padding-left: 0.5rem;
 }
+
+.property_pagination{
+  display: flex;
+  width: 70vw;
+  max-width: none !important;
+  flex-direction: row-reverse;
+}
+
+.property_pagination .next_page{
+  cursor: pointer;
+}

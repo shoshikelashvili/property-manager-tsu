@@ -13,10 +13,33 @@
  */
 
 wp_enqueue_style( 'properties-shortcode-css', plugin_dir_url( __FILE__ ) . '../css/properties-shortcode-display.css', array(), $this->version, 'all' );
-wp_enqueue_script( 'properties-shortcode-js', plugin_dir_url( __FILE__ ) . '../js/properties-shortcode-display.js', array( 'jquery' ), $this->version, false );
+wp_enqueue_script( 'properties-shortcode-js', plugin_dir_url( __FILE__ ) . '../js/property-shortcode-display.js', array( 'jquery' ), $this->version, false );
 
-$properties = get_posts(array('post_type' => 'property', 'posts_per_page' => 3));
 
+$posts_per_page = get_option('properties_per_page');
+if(!$posts_per_page) $posts_per_page = 6;
+
+
+$page = $_GET['property_page'];
+
+if($page > 0)
+{
+    $offset = ($page - 1) * $posts_per_page;
+}
+else{
+    $offset = 0;
+}
+
+echo $offset;
+$properties = get_posts(array('post_type' => 'property', 'posts_per_page' => $posts_per_page, 'orderby' => 'ID', 'offset' => $offset));
+
+$last_post_id = get_posts(array('post_type' => 'property', 'posts_per_page' => 1, 'orderby' => 'ID', 'order' => 'ASC'))[0]->ID;
+$first_post_id = get_posts(array('post_type' => 'property', 'posts_per_page' => 1, 'orderby' => 'ID'))[0]->ID;
+$property_ids = array();
+foreach($properties as $p)
+{
+   array_push($property_ids, $p->ID);
+}
 
 echo '<div class="grid-container">';
 foreach($properties as $property)
@@ -46,5 +69,14 @@ foreach($properties as $property)
 }
 echo '</div>';
 ?>
+
+<div class="property_pagination">
+    <?php if(!in_array($last_post_id,$property_ids)): ?>
+    <div class="next_page" onclick="redirect()"><?php _e('Next Page', 'property-manager')?></div>
+    <?php endif ?>
+    <?php if(!in_array($first_post_id,$property_ids)): ?>
+    <div class="previous_page"><?php _e('Previous Page', 'property-manager')?></div>
+    <?php endif ?>
+</div>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->

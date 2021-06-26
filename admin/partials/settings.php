@@ -56,9 +56,9 @@ wp_enqueue_script( 'settings-js', plugin_dir_url( __FILE__ ) . '../js/settings.j
         <div class="form-group">
             <label class="my-1 mr-2" for="properties_per_page"><?php _e('Amount of properties displayed per page','property-manager')?></label>
             <select class="custom-select my-1 mr-sm-2" id="properties_per_page" name="properties_per_page">
-                <option <?php if(get_option('properties_per_page') == '1') echo "selected"?> value="1">3</option>
-                <option <?php if(get_option('properties_per_page') == '2') echo "selected"; if(get_option('properties_per_page') == false) echo "selected"?> value="2">6</option>
-                <option <?php if(get_option('properties_per_page') == '3') echo "selected"?> value="3">9</option>
+                <option <?php if(get_option('properties_per_page') == '3') echo "selected"?> value="3">3</option>
+                <option <?php if(get_option('properties_per_page') == '6') echo "selected"; if(get_option('properties_per_page') == false) echo "selected"?> value="6">6</option>
+                <option <?php if(get_option('properties_per_page') == '9') echo "selected"?> value="9">9</option>
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
