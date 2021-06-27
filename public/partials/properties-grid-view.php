@@ -52,7 +52,7 @@ foreach($properties as $property)
     echo '<div class="photo">';
     echo $featured_image;
     echo '</div>';
-    echo '<div class="price">' . $property_data['property_price'][0] . '$</div>';
+    echo '<div class="price">' . number_format($property_data['property_price'][0]) . ' ' . get_option('price_currency') .'</div>';
     echo '<div class="location">' . $property_data['property_location'][0] . '</div>';
     echo '<div class="appliances">';
     echo '<div class="bathrooms">';

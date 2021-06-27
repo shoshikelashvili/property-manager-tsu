@@ -85,7 +85,7 @@ crossorigin=""></script>
                 {
                     if($field == $key && $field_value[0])
                     {
-                        if($value == __('Price','property-manager')) $field_value[0] .= '$';
+                        if($value == __('Price','property-manager')) $field_value[0] = number_format($field_value[0]) . ' ' . get_option('price_currency');
                         if($value == __('Area','property-manager')) $field_value[0] .= 'მ²';
                         echo '<li>';
                         echo '<span class="field_name">' . $value . ':</span>';

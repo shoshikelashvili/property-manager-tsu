@@ -35,8 +35,8 @@ wp_enqueue_script( 'settings-js', plugin_dir_url( __FILE__ ) . '../js/settings.j
         <div class="form-group">
             <label class="my-1 mr-2" for="price_currency"><?php _e('Price Currency','property-manager')?></label>
             <select class="custom-select my-1 mr-sm-2" id="price_currency" name="price_currency">
-                <option <?php if(get_option('price_currency') == '1') echo "selected"; if(get_option('price_currency') == false) echo "selected"?> value="1">USD ($)</option>
-                <option <?php if(get_option('price_currency') == '2') echo "selected"?> value="2">GEL (ლ)</option>
+                <option <?php if(get_option('price_currency') == '$') echo "selected"; if(get_option('price_currency') == false) echo "selected"?> value="$">USD ($)</option>
+                <option <?php if(get_option('price_currency') == '₾') echo "selected"?> value="₾">GEL (₾)</option>
             </select>
         </div>
         <div class="form-group">
