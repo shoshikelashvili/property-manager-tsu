@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: property-manager-ka_GE\n"
-"POT-Creation-Date: 2021-06-27 04:24+0400\n"
-"PO-Revision-Date: 2021-06-27 04:25+0400\n"
+"POT-Creation-Date: 2021-06-27 04:29+0400\n"
+"PO-Revision-Date: 2021-06-27 04:30+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -261,6 +261,10 @@ msgstr "გამოვაჩინოთ რუკა ბინის დეტ
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:57
 msgid "Amount of properties displayed per page"
 msgstr "ბინების რაოდენობა თითო გვერდზე"
+
+#: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/admin/partials/settings.php:64
+msgid "Submit"
+msgstr "დამახსოვრება"
 
 #: C:\xampp\htdocs\tsu-project\wp-content\plugins\property-manager/includes/class-property-manager-activator.php:39
 msgid ""

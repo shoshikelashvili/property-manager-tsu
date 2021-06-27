@@ -148,7 +148,7 @@ crossorigin=""></script>
     </div>
 </div>
 
-<?php if($property_data['custom_map_data'][0] != '') :?>
+<?php if($property_data['custom_map_data'][0] != '' && get_option('map_boolean') == 'on') :?>
 <div class="map_container">
     <div class="textcontainer">
         <?php _e('Property Map', 'property-manager');?>

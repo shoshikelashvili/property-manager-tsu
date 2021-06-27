@@ -61,6 +61,6 @@ wp_enqueue_script( 'settings-js', plugin_dir_url( __FILE__ ) . '../js/settings.j
                 <option <?php if(get_option('properties_per_page') == '9') echo "selected"?> value="9">9</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary"><?php _e('Submit','property-manager')?></button>
     </form>
 </div>
