@@ -86,7 +86,15 @@ crossorigin=""></script>
                     if($field == $key && $field_value[0])
                     {
                         if($value == __('Price','property-manager')) $field_value[0] = number_format($field_value[0]) . ' ' . get_option('price_currency');
-                        if($value == __('Area','property-manager')) $field_value[0] .= 'მ²';
+                        if($value == __('Area','property-manager')) 
+                        {
+                            $area_value = get_option('area_currency');
+                            if($area_value == '1') $area_value = __('m²','property-manager');
+                            if($area_value == '2') $area_value = __('km²','property-manager');
+                            if($area_value == '3') $area_value = __('ha','property-manager');
+                            else $area_value = __('m²','property-manager');
+                            $field_value[0] = number_format($field_value[0]) . ' ' . $area_value;
+                        }
                         echo '<li>';
                         echo '<span class="field_name">' . $value . ':</span>';
                         echo '<span class="field_value">  ' . $field_value[0] . '</span>';
