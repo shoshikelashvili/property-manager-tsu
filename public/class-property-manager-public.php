@@ -101,7 +101,7 @@ class Property_Manager_Public {
 
 
 	//Output properties shortcode
-	public function properties_shortcode_display(){
+	public function properties_shortcode_display($atts){
 		$pid = get_query_var('property_id');
 		$view_name = 'properties-grid-view';
 		if($pid)
@@ -109,7 +109,7 @@ class Property_Manager_Public {
 			$view_name = 'property-details-view';
 		}
 		$controller = new Property_Manager_Public_View_Controller($this->plugin_name, $this->version);
-		return $controller->render_view($view_name, $pid);
+		return $controller->render_view($view_name, $pid, $atts);
 	}
 
 	public function property_rewrite_rules(){

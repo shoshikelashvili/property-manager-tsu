@@ -48,8 +48,9 @@ class Property_Manager_Public_View_Controller {
 	 *
 	 * @since    1.0.0
 	 */
-	public function render_view($view_name, $property_id) {
+	public function render_view($view_name, $property_id, $attributes) {
 		$this->property_id = $property_id;
+		$shortcode_attributes = $attributes;
         ob_start();
         require 'partials/'. $view_name . '.php';
         $output = ob_get_clean();
