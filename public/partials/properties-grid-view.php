@@ -16,17 +16,59 @@ wp_enqueue_style( 'properties-shortcode-css', plugin_dir_url( __FILE__ ) . '../c
 wp_enqueue_script( 'properties-shortcode-js', plugin_dir_url( __FILE__ ) . '../js/property-shortcode-display.js', array( 'jquery' ), $this->version, false );
 
 ///////////////// Shortcodes params filtration
-print_r($shortcode_attributes);
+
 $meta_query = array();
-if(!empty($shortcode_attributes['bedrooms']))
+$meta_query['relation'] = 'AND';
+// if(!empty($shortcode_attributes['bedrooms']))
+// {
+//     $meta_query  = array(
+//         array(
+//             'key'       => 'property_bedrooms',
+//             'value'     => $shortcode_attributes['bedrooms'],
+//             'type' => 'numeric',
+//             'compare'   => '=',
+//         )
+//     );
+// }
+
+foreach($shortcode_attributes as $key => $value)
 {
-    $meta_query  = array(
-        array(
-            'key'       => 'property_bedrooms',
-            'value'     => $shortcode_attributes['bedrooms'],
+    if($key == "location")
+    {
+        $att_query = array(
+            'key' => 'property_' . $key,
+            'value'     => $value,
+            'compare'   => 'LIKE',
+        );
+        array_push($meta_query, $att_query);
+        continue;
+    }
+
+    if(str_contains($key,'min'))
+    {
+        $att_query = array(
+            'key' => 'property_' . str_replace("min_","",$key),
+            'value'     => $value,
+            'compare'   => '>=',
+        );
+    }
+    elseif(str_contains($key,'max'))
+    {
+        $att_query = array(
+            'key' => 'property_' . str_replace("max_","",$key),
+            'value'     => $value,
+            'compare'   => '<=',
+        );
+    }
+    else
+    {
+        $att_query = array(
+            'key' => 'property_' . $key,
+            'value'     => $value,
             'compare'   => '=',
-        )
-    );
+        );
+    }
+    array_push($meta_query, $att_query);
 }
 
 //////////////////////
@@ -47,8 +89,8 @@ else{
 // echo $offset;
 $properties = get_posts(array('post_type' => 'property', 'posts_per_page' => $posts_per_page, 'orderby' => 'ID', 'offset' => $offset, 'order' => 'ASC', 'meta_query' => $meta_query));
 
-$last_post_id = get_posts(array('post_type' => 'property', 'posts_per_page' => 1, 'orderby' => 'ID', 'order' => 'DESC'))[0]->ID;
-$first_post_id = get_posts(array('post_type' => 'property', 'posts_per_page' => 1, 'orderby' => 'ID', 'order' => 'ASC'))[0]->ID;
+$last_post_id = get_posts(array('post_type' => 'property', 'posts_per_page' => 1, 'orderby' => 'ID', 'order' => 'DESC', 'meta_query' => $meta_query))[0]->ID;
+$first_post_id = get_posts(array('post_type' => 'property', 'posts_per_page' => 1, 'orderby' => 'ID', 'order' => 'ASC', 'meta_query' => $meta_query))[0]->ID;
 $property_ids = array();
 foreach($properties as $p)
 {
