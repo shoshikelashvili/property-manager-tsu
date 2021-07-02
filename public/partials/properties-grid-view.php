@@ -51,6 +51,10 @@ foreach($shortcode_attributes as $key => $value)
             'value'     => $value,
             'compare'   => '>=',
         );
+        if(is_numeric($value))
+        {
+            $att_query['type'] = 'numeric';
+        }
     }
     elseif(str_contains($key,'max'))
     {
@@ -59,6 +63,10 @@ foreach($shortcode_attributes as $key => $value)
             'value'     => $value,
             'compare'   => '<=',
         );
+        if(is_numeric($value))
+        {
+            $att_query['type'] = 'numeric';
+        }
     }
     else
     {
@@ -71,6 +79,7 @@ foreach($shortcode_attributes as $key => $value)
     array_push($meta_query, $att_query);
 }
 
+// print_r($meta_query);
 //////////////////////
 
 $posts_per_page = get_option('properties_per_page');
