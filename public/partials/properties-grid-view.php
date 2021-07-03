@@ -15,6 +15,15 @@
 wp_enqueue_style( 'properties-shortcode-css', plugin_dir_url( __FILE__ ) . '../css/properties-shortcode-display.css', array(), $this->version, 'all' );
 wp_enqueue_script( 'properties-shortcode-js', plugin_dir_url( __FILE__ ) . '../js/property-shortcode-display.js', array( 'jquery' ), $this->version, false );
 
+//CSS IMPORT
+
+if(get_option('additional_css'))
+{
+    echo '<style type="text/css">';
+    echo get_option('additional_css');
+    echo '</style>';
+}
+
 ///////////////// Shortcodes params filtration
 
 $meta_query = array();
@@ -113,7 +122,14 @@ foreach($properties as $property)
     $property_data = get_post_meta($property->ID);
     echo '<a onclick="window.location='.$property->ID.'">';
     echo '<div class="grid-item">';
-    echo '<div class="title">' . $property->post_title . '</div>';
+    if(get_option('font_title_grid'))
+    {
+        echo '<div class="title" style="font-size:'.get_option('font_title_grid').'">' . $property->post_title . '</div>';
+    }
+    else{
+        echo '<div class="title">' . $property->post_title . '</div>';
+    }
+    
     echo '<div class="photo">';
     echo $featured_image;
     echo '</div>';

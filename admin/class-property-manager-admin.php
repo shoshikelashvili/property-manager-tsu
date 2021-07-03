@@ -395,6 +395,9 @@ class Property_Manager_Admin {
 		register_setting('propertymanagersettings','area_format');
 		register_setting('propertymanagersettings','map_boolean');
 		register_setting('propertymanagersettings','properties_per_page');
+		register_setting('propertymanagersettings','font_title_grid');
+		register_setting('propertymanagersettings','fields_color');
+		register_setting('propertymanagersettings','additional_css');
 	}
 
 	//Function for disabling gutenberg editor for property custom post type
