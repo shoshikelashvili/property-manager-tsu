@@ -20,6 +20,26 @@
     font-size: 2rem;
 }
 
+.calculator{
+    padding: 0rem !important;
+    width: 21rem !important;
+    margin-top: 1rem;
+    margin-left: 1rem !important;
+}
+
+.mcw-wrap .mcw__title{
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+
+.mcw-wrap .mcw-form__title{
+    font-size:1.1rem;
+}
+
+.mcw-back{
+    display:none;
+}
+
 .property_taxonomies{
     background-color: white !important;
     /* max-width: 80rem !important; */
@@ -45,6 +65,13 @@
     padding: 2rem !important;
     width: 33rem !important;
     margin-left: 1rem !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.property_agent .agent_name{
+    font-size: 2rem;
 }
 
 .agent_details{
@@ -66,6 +93,11 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+.property_details ul li{
+    padding: 0.3rem;
+    padding-left: 0;
 }
 
 .property_details .details_label{

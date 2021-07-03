@@ -88,10 +88,11 @@ crossorigin=""></script>
                         if($value == __('Price','property-manager')) $field_value[0] = number_format($field_value[0]) . ' ' . get_option('price_currency');
                         if($value == __('Area','property-manager')) 
                         {
-                            $area_value = get_option('area_currency');
+                            $area_value = get_option('area_format');
+                            
                             if($area_value == '1') $area_value = __('m²','property-manager');
-                            if($area_value == '2') $area_value = __('km²','property-manager');
-                            if($area_value == '3') $area_value = __('ha','property-manager');
+                            else if($area_value == '2') $area_value = __('km²','property-manager');
+                            else if($area_value == '3') $area_value = __('ha','property-manager');
                             else $area_value = __('m²','property-manager');
                             $field_value[0] = number_format($field_value[0]) . ' ' . $area_value;
                         }
@@ -111,22 +112,27 @@ crossorigin=""></script>
         </ul>
     </div>
     <?php if(!empty($property_types[0]->name)): ?>
-    <div class="property_taxonomies">
-        <div class="taxonomies_label"><?php _e('Property Type','property-manager')?></div>
-        <ul>
-            <?php 
-            $field_metadata = Property_Manager_Fields::get_fields_associative();
-            foreach($property_types as $type)
-            {
-                echo '<li>';
-                echo '<span class="field_value">' . $type->name . '</span>';
-                echo '</li>';
-            }
-            ?>
-        </ul>
+    <div class="taxonomy_and_calculator_container">
+        <div class="property_taxonomies">
+            <div class="taxonomies_label"><?php _e('Property Type','property-manager')?></div>
+            <ul>
+                <?php 
+                $field_metadata = Property_Manager_Fields::get_fields_associative();
+                foreach($property_types as $type)
+                {
+                    echo '<li>';
+                    echo '<span class="field_value">' . $type->name . '</span>';
+                    echo '</li>';
+                }
+                ?>
+            </ul>
+        </div>
+        <div class="calculator">
+            <!-- Mortgage Calculator Widget --><div class="mcw-wrap_250" id="maoWrap"><div id="mcwWidget"></div><script>var maoCalc={};maoCalc.settings={"theme":"theme1","view":"vertical2","responsive":"mcw-wrap_responsive","font":"Open Sans, Helvetica, Arial, sans-serif","border":false,"boxShadow":true,"backgroundColor":"#ffffff","fieldColor":"#fff","textColor":"#334356","borderColor":"#dde2e5","currency":"","currencySide":"right","delimiters":",.","popup":true,"popupView":"doughnutPopup","style":true,"widgetTotalInterest":false,"widgetTotalPrincipal":false,"monthlyPayment":"Monthly Payment","totalPrincipalPaid":"Total Principal","totalInterestPaid":"Total Interest","totalPayments":"Total Payments","years":"წელიწადი","title":{"enabled":true,"color":"#334356","label":"გირაოს კალკულატორი"},"homePrice":{"label":"ბინის ფასი","value":"<?php echo  number_format($property_data['property_price'][0])?>"},"downPayment":{"enabled":false,"label":"Down Payment","value":false},"interestRate":{"label":"განაკვეთი","value":"4.05"},"mortgageTerm":{"label":"გირაოს დრო","value":"30"},"pmi":{"enabled":false,"label":"PMI","value":false},"taxes":{"enabled":false,"label":"გადასახადები","value":false},"insurance":{"enabled":false,"label":"დაზღვევა","value":false},"hoa":{"enabled":false,"label":"HOA","value":false},"extra":{"enabled":false,"labelAdd":"Add extra payments","labelRemove":"Remove extra payments","labelToMonthy":"To monthly","labelYearly":"Extra yearly"},"startDate":{"enabled":true,"label":"აღების თარიღი"},"monthsArr":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"button":{"color":"#fff","bg":"#09f","label":"გამოიანგარიშე"},"amortizationSchedule":"Amortization Schedule","popupLabels":{"monthlyPrincipalInterest":"თვიური ძირითადი და პროცენტი","monthlyExtraPayment":"თვიური დამატებითი გადასახადი","monthlyPayment":"თვიური გადასახადი","downPayment":"Down payment","extraPayments":"ზედმეტი გადასახადი","totalPrincipalPaid":"ჯამური ძირითადი გადახდილი","totalInterestPaid":"ჯამური პროცენტი გადახდილი","totalOfAllPayments":"ყველა გადასახადის ჯამი","amortizationSchedule":"გადახდების გრაფიკი","tablePaymentDate":"გადახდის თარიღი","tablePayment":"გადასახადი","tablePrincipal":"მთავარი","tableInterest":"პროცენტი","tableTotalInterest":"ჯამური პროცენტი","tableBalance":"ბალანსი","pmi":"PMI","taxes":"Taxes","insurance":"Insurance","shortInsurance":"Ins","hoa":"HOA","chartBalance":"Balance","chartPrincipal":"Principal","chartInterest":"Interest"},"useTitleAsLink":false,"titleLinkUrl":"","useFooterLink":false,"footerLinkAnchor":"","footerLinkUrl":""};(function(){function loadScript(src){var s,t;s=document.createElement("script");s.src=src;t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);}function decode(str){return!window.btoa?'not_found':window.btoa(unescape(encodeURIComponent(str)));}var uri='https://mortgage-advice-online.org/widget/'+decode(window.location)+'.js';loadScript(uri);})();</script></div><!-- End Mortgage Calculator Widget -->
+        </div>
     </div>
     <?php else: ?>
-        <div class="property_taxonomies">
+    <div class="property_taxonomies">
         <div class="taxonomies_label"><?php _e('Property Type','property-manager')?></div>
         <ul>
             <li>
@@ -138,7 +144,7 @@ crossorigin=""></script>
     <div class="property_agent">
         <div class="agent_label"><?php _e('Agent Information','property-manager')?></div>
         <div class="image_container">
-            <?php echo get_avatar($agent->data->ID,250);?>
+            <?php echo get_avatar($agent->data->ID,330);?>
         </div>
         <span class="agent_name"><?php echo $agent->data->display_name?></span>
         <div class="agent_details">
