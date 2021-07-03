@@ -138,7 +138,24 @@ class Property_Manager_Admin {
 			'add_edit_delete_properties',
 			array( $this , 'add_properties_display')
 		);
+		add_submenu_page( 
+			'property_management', 
+			__('Help','property-manager'),
+			__('Help','property-manager'), 
+			'manage_options', 
+			'help',
+			array( $this , 'help')
+		);
 		
+	}
+
+	/**
+	 * Returning the main dashboard view
+	 *
+	 * @since    1.0.0
+	 */
+	public function help(){
+		require_once 'partials/help.php';
 	}
 
 	/**
