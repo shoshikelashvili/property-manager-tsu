@@ -15,3 +15,13 @@ function redirect_to_propertyedit(){
     console.log(new_url);
     window.location.href = new_url;
 }
+
+function help()
+{
+    var url = window.location.href.split('?')[0];
+    url = url.slice(0,-10);
+    console.log(url);
+    var new_url = url + '/admin.php?page=help';
+    console.log(new_url);
+    window.location.href = new_url;
+}
