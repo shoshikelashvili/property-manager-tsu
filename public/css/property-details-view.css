@@ -10,6 +10,24 @@
     max-width: 100% !important;
 }
 
+@media only screen and (max-width: 1000px) {
+    .details_holder .taxonomy_and_calculator_container {
+      display: none;
+    }
+
+  }
+
+@media only screen and (max-width: 630px) {
+
+    .property_agent{
+        display:none !important;
+    }
+
+    .property-title{
+        font-size: 2rem;
+    }
+}
+
 .property_description{
     background-color: white !important;
     max-width: 80rem !important;
